@@ -96,8 +96,8 @@ const HeroSection = () => {
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                     <stat.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{stat.number}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                  <div className="text-2xl font-bold"style={{color:"var(--text-color)"}}>{stat.number}</div>
+                  <div className="text-sm"style={{color:"var(--text-color)"}}>{stat.label}</div>
                 </div>
               ))}
             </div>

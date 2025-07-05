@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-bold text-blue-600 dark:text-white tracking-tight"
+            className="text-2xl font-bold text-blue-600 dark:text-white tracking-tight" style={{color:"var(--text-color)"}}
           >
             MalangCode
           </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
               onClick={() =>{
                 setIsDarkMode(!isDarkMode)
               }}
-              className="text-xl bg-gray-100  w-10 h-10 justify-center items-center flex rounded-full text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              className="text-xl bg-gray-100  w-10 h-10 justify-center items-center flex rounded-full text-gray-600 dark:text-gray-800 hover:text-blue-600 dark:hover:text-blue-400"
               title="Toggle dark mode"
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}

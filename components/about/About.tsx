@@ -246,7 +246,7 @@ const AboutSection = () => {
           ))}
         </div>
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-6 overflow-visible">
           {/* Header */}
           <div className="text-center mb-20">
             <div
@@ -490,7 +490,7 @@ const AboutSection = () => {
                 draggable={true}
               >
                 {testimonials.map((testimonial, i) => (
-                  <div key={testimonial.name + i} className="px-5 testimonial-slide">
+                  <div key={testimonial.name + i} className="px-5 py-10 testimonial-slide">
                     <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl transition-all duration-300 h-full flex flex-col justify-between">
                       {/* Image at the top, centered, rounded, even larger size */}
                       <div className="flex justify-center mb-5">
@@ -542,7 +542,7 @@ const AboutSection = () => {
           }
           .testimonial-card:hover {
             transform: scale(1.12);
-            z-index: 10;
+            z-index: 20;
             box-shadow: 0 8px 32px 0 rgba(59,130,246,0.18);
             border-color: #3b82f6;
             background: rgba(59,130,246,0.08);

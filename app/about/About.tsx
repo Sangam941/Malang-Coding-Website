@@ -24,6 +24,7 @@ import {
   Calendar,
   TrendingUp,
 } from "lucide-react"
+import Contact from "../contact/page"
 
 const teamMembers = [
   {
@@ -253,12 +254,12 @@ const AboutSection = () => {
               className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             >
               <Users className="w-4 h-4 text-blue-500" />
-              <span className="" style={{color:"var(--text-color)"}}>About Malang Coders</span>
+              <span className="" style={{ color: "var(--text-color)" }}>About Malang Coders</span>
             </div>
 
             <h2
               className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            style={{color:"var(--text-color)"}}>
+              style={{ color: "var(--text-color)" }}>
               Crafting Digital{" "}
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Excellence
@@ -267,7 +268,7 @@ const AboutSection = () => {
 
             <p
               className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-            style={{color:"var(--text-color)"}}>
+              style={{ color: "var(--text-color)" }}>
               We are a passionate team of developers, designers, and innovators dedicated to transforming your ideas into
               powerful digital solutions that drive business growth and user engagement.
             </p>
@@ -291,11 +292,11 @@ const AboutSection = () => {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <stat.icon className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold mb-2" style={{color:"var(--text-color)"}}>
+                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--text-color)" }}>
                   {stat.value}
                   {stat.suffix}
                 </div>
-                <div className="text-sm"style={{color:"var(--text-color)"}}>{stat.label}</div>
+                <div className="text-sm" style={{ color: "var(--text-color)" }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -304,27 +305,27 @@ const AboutSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             {/* Left Content */}
             <div className="space-y-6">
-              <h3 className="text-3xl md:text-4xl font-bold "style={{color:"var(--text-color)"}}>Our Story</h3>
-              <p className="text-lg  leading-relaxed" style={{color:"var(--text-color)"}}>
+              <h3 className="text-3xl md:text-4xl font-bold " style={{ color: "var(--text-color)" }}>Our Story</h3>
+              <p className="text-lg  leading-relaxed" style={{ color: "var(--text-color)" }}>
                 Founded in 2019 with a mission to bridge the gap between innovative technology and real-world business
                 solutions. We&apos;ve grown from a small team of passionate developers into a full-service digital agency.
               </p>
-              <p className="text-lg  leading-relaxed" style={{color:"var(--text-color)"}}>
+              <p className="text-lg  leading-relaxed" style={{ color: "var(--text-color)" }}>
                 We believe great software is about understanding your business, users, and goals. Every project is a
                 partnership aimed at creating lasting digital success.
               </p>
               <div className="flex items-center space-x-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">200+</div>
-                  <div className="text-sm "style={{color:"var(--text-color)"}}>Projects</div>
+                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Projects</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
-                  <div className="text-sm "style={{color:"var(--text-color)"}}>Clients</div>
+                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Clients</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-green-600 dark:text-green-400">99%</div>
-                  <div className="text-sm "style={{color:"var(--text-color)"}}>Success Rate</div>
+                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Success Rate</div>
                 </div>
               </div>
             </div>
@@ -372,14 +373,14 @@ const AboutSection = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Timeline */}
           <div
             className={`mb-20 transition-all duration-1000 delay-1400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Our Journey</h3>
-              <p className="text-lg max-w-2xl mx-auto" style={{color:"var(--text-color)"}}>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Our Journey</h3>
+              <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-color)" }}>
                 Key milestones that shaped our company&apos;s growth and success
               </p>
             </div>
@@ -387,7 +388,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
               <div className="space-y-12">
-              {timeline.map((item, index) => (
+                {timeline.map((item, index) => (
                   <div
                     key={item.year}
                     className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
@@ -396,8 +397,8 @@ const AboutSection = () => {
                     <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
                       <div className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
                         <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">{item.year}</div>
-                        <h4 className="text-xl font-semibold mb-2"style={{color:"var(--text-color)"}}>{item.title}</h4>
-                        <p className="" style={{color:"var(--text-color)"}}>{item.description}</p>
+                        <h4 className="text-xl font-semibold mb-2" style={{ color: "var(--text-color)" }}>{item.title}</h4>
+                        <p className="" style={{ color: "var(--text-color)" }}>{item.description}</p>
                       </div>
                     </div>
                     <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
@@ -415,8 +416,8 @@ const AboutSection = () => {
             className={`mb-20 transition-all duration-1000 delay-1600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Our Expertise</h3>
-              <p className="text-lg max-w-2xl mx-auto" style={{color:"var(--text-color)"}}>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Our Expertise</h3>
+              <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-color)" }}>
                 Technologies and skills that power our innovative solutions
               </p>
             </div>
@@ -433,9 +434,9 @@ const AboutSection = () => {
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                         <tech.icon className="w-5 h-5 text-white" />
                       </div>
-                      <span className="text-lg font-semibold" style={{color:"var(--text-color)"}} >{tech.name}</span>
+                      <span className="text-lg font-semibold" style={{ color: "var(--text-color)" }} >{tech.name}</span>
                     </div>
-                    <span className="text-sm"style={{color:"var(--text-color)"}}>{tech.level}%</span>
+                    <span className="text-sm" style={{ color: "var(--text-color)" }}>{tech.level}%</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div
@@ -519,8 +520,11 @@ const AboutSection = () => {
             </div>
           </div>
 
+          <div id="contact"> 
+            <Contact />
+          </div>
           {/* CTA Section */}
-          
+
         </div> {/* END: relative z-10 container mx-auto px-6 */}
 
         <style jsx>{`
@@ -553,7 +557,12 @@ const AboutSection = () => {
             }
           }
         `}</style>
+
+
+
       </section>
+
+
     </>
   )
 }

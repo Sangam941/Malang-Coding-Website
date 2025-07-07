@@ -24,7 +24,7 @@ import {
   Calendar,
   TrendingUp,
 } from "lucide-react"
-import Contact from "../contact/page"
+import Contact from "../contact/Contact"
 
 const teamMembers = [
   {
@@ -286,8 +286,8 @@ const AboutSection = () => {
             ].map((stat, index) => (
               <div
                 key={stat.label}
-                className="group text-center p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group text-center p-6 backdrop-blur-sm rounded-2xl shadow transition-all duration-300 transform hover:scale-105"
+                style={{ animationDelay: `${index * 100}ms`, backgroundColor: "var(--card-bg)" }}
               >
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <stat.icon className="w-6 h-6 text-white" />
@@ -363,13 +363,13 @@ const AboutSection = () => {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
+                className="text-center p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                style={{ backgroundColor: "var(--card-bg" }}>
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{value.title}</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{value.description}</p>
+                <h4 className="text-lg font-semibold mb-2" style={{ color: "var(--text-color)" }}>{value.title}</h4>
+                <p className="text-gray-600  text-sm" style={{ color: "var(--text-color)" }}>{value.description}</p>
               </div>
             ))}
           </div>
@@ -454,7 +454,7 @@ const AboutSection = () => {
             className={`mb-20 transition-all duration-1000 delay-1800 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>What Clients Say</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Our Team</h3>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-color)" }}>
                 Real feedback from real clients who trusted us with their projects
               </p>
@@ -518,10 +518,6 @@ const AboutSection = () => {
                 ))}
               </Slider>
             </div>
-          </div>
-
-          <div id="contact"> 
-            <Contact />
           </div>
           {/* CTA Section */}
 

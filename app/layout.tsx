@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={`${inter.className} `} style={{backgroundColor:"var(--bg-color)"}}>
         <Navbar />
-        <main className="px-8">{children}</main>
+        <main className="px-3 sm:px-3 md:px-4 lg:px-6 xl:px-8">{children}</main>
         <Footer />
       </body>
     </html>

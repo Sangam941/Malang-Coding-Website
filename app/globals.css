@@ -13,6 +13,7 @@
   --badge-bg-alt: #f3f4f6;         
   --border-color: #e5e7eb;
   --secondary-bg: #f3f4f6;
+  --input-color: #fbfdff; /* gray-800 */
 
 }
 
@@ -29,6 +30,7 @@
   --badge-bg-alt: #f3f4f6;         /*gray-100, light gray alternative badge bg*/
   --border-color: #1f2937;
   --secondary-bg: #1e293b;
+  --input-color: #37405b;
 }
 
 

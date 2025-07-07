@@ -38,7 +38,7 @@ const ProjectsSection = () => {
       title: "EcoShop E-commerce Platform",
       category: "ecommerce",
       description: "Modern e-commerce platform with AI-powered recommendations and sustainable product focus.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p1.webp",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
       githubUrl: "#",
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
       title: "HealthCare Management System",
       category: "web",
       description: "Comprehensive healthcare management system for hospitals with patient portal integration.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p2.jpeg",
       technologies: ["Next.js", "PostgreSQL", "AWS", "Socket.io"],
       liveUrl: "#",
       githubUrl: "#",
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       title: "FitTracker Mobile App",
       category: "mobile",
       description: "Cross-platform fitness tracking app with social features and AI workout plans.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p1.webp",
       technologies: ["React Native", "Firebase", "Redux"],
       liveUrl: "#",
       githubUrl: "#",
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
       title: "Learning Management Platform",
       category: "web",
       description: "Modern LMS with interactive courses, live streaming, and progress analytics.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p2.jpeg",
       technologies: ["Vue.js", "Laravel", "MySQL"],
       liveUrl: "#",
       githubUrl: "#",
@@ -78,7 +78,7 @@ const ProjectsSection = () => {
       title: "Restaurant Delivery App",
       category: "mobile",
       description: "Multi-vendor food delivery platform with real-time tracking and payments.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p1.webp",
       technologies: ["Flutter", "Node.js", "Redis"],
       liveUrl: "#",
       githubUrl: "#",
@@ -88,7 +88,7 @@ const ProjectsSection = () => {
       title: "Fashion Store Website",
       category: "ecommerce",
       description: "Luxury fashion e-commerce site with virtual try-on and AR features.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/image/projects/p2.jpeg",
       technologies: ["React", "Shopify", "Three.js"],
       liveUrl: "#",
       githubUrl: "#",
@@ -99,23 +99,23 @@ const ProjectsSection = () => {
     activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
   return (
-    <section ref={sectionRef} id="projects" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section ref={sectionRef} id="project" className="py-20 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
           <h2
-            className={`text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${
+            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
-          >
+          style={{ color: "var(--text-color)" }}>
             Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p
-            className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
-          >
+           style={{ color: "var(--text-color)" }}>
             Explore our portfolio of successful projects that have helped businesses achieve their digital goals.
           </p>
         </div>
@@ -133,7 +133,7 @@ const ProjectsSection = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeFilter === filter.id
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                  : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  : "bg-gray-100  text-gray-700  hover:bg-gray-200"
               }`}
             >
               {filter.name}
@@ -146,10 +146,10 @@ const ProjectsSection = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 ${
+              className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">
                 <img
@@ -157,7 +157,7 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                <div className="absolute inset-0 bg-black/50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <a
                     href={project.liveUrl}
                     className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors"
@@ -179,14 +179,14 @@ const ProjectsSection = () => {
                     {project.category}
                   </span>
                   <div className="flex items-center space-x-1">
-                    {project.category === "web" && <Globe className="w-4 h-4 text-gray-500" />}
-                    {project.category === "mobile" && <Smartphone className="w-4 h-4 text-gray-500" />}
-                    {project.category === "ecommerce" && <ShoppingCart className="w-4 h-4 text-gray-500" />}
+                    {project.category === "web" && <Globe className="w-4 h-4 "  style={{ color: "var(--text-color)" }} />}
+                    {project.category === "mobile" && <Smartphone className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                    {project.category === "ecommerce" && <ShoppingCart className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
+                <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (

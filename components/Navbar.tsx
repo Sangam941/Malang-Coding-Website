@@ -19,10 +19,10 @@ import { FaDiagramProject } from "react-icons/fa6";
 
 const navLinks = [
   { name: "Home", href: "/", icon: HiHome },
-  { name: "About", href: "#about", icon: HiQuestionMarkCircle },
-  { name: "Service", href: "/service", icon: GrServices },
-  { name: "Contact", href: "/contact", icon: IoMdContact },
-  { name: "Project", href: "/project", icon: FaDiagramProject },
+  { name: "About", href: "/about", icon: HiQuestionMarkCircle },
+  { name: "Service", href: "#service", icon: GrServices },
+  { name: "Contact", href: "#contact", icon: IoMdContact },
+  { name: "Project", href: "#project", icon: FaDiagramProject },
 ];
 
 export default function Navbar() {
@@ -71,8 +71,8 @@ export default function Navbar() {
                     className={cn(
                       "w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200",
                       isActive
-                        ? "bg-blue-600 text-white shadow"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400"
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow"
+                        : "bg-gray-100 text-gray-600 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400"
                     )}
                   >
                     <Icon className="text-lg" />
@@ -100,7 +100,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={()=>setIsDarkMode(!isDarkMode)}
-              className="text-xl text-gray-700 dark:text-gray-300"
+              className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center text-xl text-gray-700"
               title="Toggle dark mode"
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}
@@ -118,9 +118,11 @@ export default function Navbar() {
       {/* Mobile Sidebar */}
       <div
         className={cn(
-          "fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg z-50 transform transition-transform duration-300 ease-in-out",
+          "fixed top-0 right-0 h-full w-64 shadow-lg z-50 transform transition-transform duration-300 ease-in-out",
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         )}
+
+        style={{ backgroundColor: "var(--bg-color)" }}
       >
         <div className="flex justify-between items-center px-4 py-3 border-b">
           <h2 className="text-lg font-semibold text-blue-700 dark:text-blue-400">
@@ -128,7 +130,8 @@ export default function Navbar() {
           </h2>
           <button
             onClick={toggleSidebar}
-            className="text-gray-600 hover:text-red-500"
+            className="hover:text-red-500"
+            style={{ color: "var(--text-color)" }}
           >
             <HiX className="text-2xl" />
           </button>
@@ -149,13 +152,13 @@ export default function Navbar() {
                     className={cn(
                       "w-10 h-10 flex items-center justify-center rounded-full transition-all duration-200",
                       isActive
-                        ? "bg-blue-600 text-white shadow"
+                        ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow"
                         : "bg-gray-100 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-gray-700"
                     )}
                   >
                     <Icon className="text-xl" />
                   </div>
-                  <span>{name}</span>
+                  <span style={{ color: "var(--text-color)" }}>{name}</span>
                 </Link>
               );
             })}

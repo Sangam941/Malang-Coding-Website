@@ -136,7 +136,7 @@ const ProjectsSection = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`cursor-pointer px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeFilter === filter.id
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                   : "bg-gray-100  text-gray-700  hover:bg-gray-200"

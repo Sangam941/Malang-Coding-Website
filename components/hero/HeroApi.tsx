@@ -8,7 +8,6 @@ const HeroApi = async () => {
     const data = res.data;
     console.log(data)
     return <HeroSection  data = {data}/>
-
 }
 
 export default HeroApi

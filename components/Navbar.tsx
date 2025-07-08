@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="shadow-md sticky top-0 z-50" style={{backgroundColor:"var(--bg-color)"}}>
+      <nav className="shadow-md sticky top-0 z-50" style={{backgroundColor:"var(--card-bg)"}}>
         <div className="max-w-7xl mx-auto px-8 py-3 flex items-center justify-between">
           <Link
             href="/"

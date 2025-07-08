@@ -262,13 +262,10 @@ const Service = () => {
         <section
             ref={sectionRef}
             id="services"
-            className="relative py-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-slate-900 overflow-hidden transition-colors duration-300"
-           style={{ color: "var(--text-color)" }}>
+            className="relative py-10 overflow-hidden transition-colors duration-300"
+           style={{ color: "var(--bg-color)" }}>
             {/* Background Elements */}
-            <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"></div>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.1),rgba(255,255,255,0))]"></div>
-            </div>
+           
 
             {/* Floating Elements */}
             <div className="absolute inset-0 overflow-hidden">
@@ -292,13 +289,13 @@ const Service = () => {
                     <div
                         className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                     >
-                        <Cog className="w-4 h-4 text-blue-500 animate-spin" />
-                        <span className="text-gray-600 dark:text-gray-300">Our Services</span>
+                          <Cog className="w-4 h-4 text-blue-500 animate-spin" />
+                        <span style={{color:"var(--text-color)"}}>Our Services</span>
                     </div>
 
                     <h2
-                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-                    >
+                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300  ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    style={{color:"var(--text-color)"}}>
                         Transforming Ideas Into{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                             Digital Reality
@@ -306,8 +303,8 @@ const Service = () => {
                     </h2>
 
                     <p
-                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-                    >
+                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    style={{color:"var(--text-color)"}}>
                         From concept to deployment, we provide comprehensive digital solutions that drive growth, enhance user
                         experience, and deliver measurable results for your business.
                     </p>
@@ -315,7 +312,7 @@ const Service = () => {
 
                 {/* Main Services Grid */}
                 <div
-                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-1000 delay-600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 >
                     {services.map((service, index) => (
                         <div
@@ -338,15 +335,15 @@ const Service = () => {
 
                             {/* Content */}
                             <div className="relative z-10">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+                                <h3 className="text-2xl font-bold mb-3"style={{color:"var(--text-color)"}}>{service.title}</h3>
+                                <p className="mb-6 leading-relaxed"style={{color:"var(--text-color)"}}>{service.description}</p>
 
                                 {/* Features */}
                                 <div className="space-y-2 mb-6">
                                     {service.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-center space-x-2">
                                             <CheckCircle className="w-4 h-4 text-green-500" />
-                                            <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                                            <span className="text-sm"style={{color:"var(--text-color)"}}>{feature}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -354,16 +351,16 @@ const Service = () => {
                                 {/* Stats */}
                                 <div className="grid grid-cols-3 gap-4 mb-6">
                                     <div className="text-center">
-                                        <div className="text-lg font-bold text-blue-600 dark:text-blue-400">{service.price}</div>
-                                        <div className="text-xs text-gray-500">Starting Price</div>
+                                        <div className="text-lg font-bold"style={{color:"var(--text-color)"}}>{service.price}</div>
+                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Starting Price</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-lg font-bold text-purple-600 dark:text-purple-400">{service.deliveryTime}</div>
-                                        <div className="text-xs text-gray-500">Delivery</div>
+                                        <div className="text-lg font-bold"style={{color:"var(--text-color)"}}>{service.deliveryTime}</div>
+                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Delivery</div>
                                     </div>
                                     <div className="text-center">
                                         <div className="text-lg font-bold text-green-600 dark:text-green-400">{service.projects}</div>
-                                        <div className="text-xs text-gray-500">Projects</div>
+                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Projects</div>
                                     </div>
                                 </div>
 
@@ -384,8 +381,8 @@ const Service = () => {
                     className={`mb-20 transition-all duration-1000 delay-800 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Process</h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Our Process</h3>
+                        <p className="text-lg max-w-2xl mx-auto"style={{color:"var(--text-color)"}}>
                             A proven methodology that ensures successful project delivery every time
                         </p>
                     </div>
@@ -426,8 +423,8 @@ const Service = () => {
                                         className={`bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl p-4 transition-all duration-500 ${activeProcess === index ? "bg-white/20 dark:bg-gray-800/30 border-blue-500/30" : ""
                                             }`}
                                     >
-                                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{step.title}</h4>
-                                        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{step.description}</p>
+                                        <h4 className="text-lg font-semibold"style={{color:"var(--text-color)"}}>{step.title}</h4>
+                                        <p className="text-sm mb-2"style={{color:"var(--text-color)"}}>{step.description}</p>
                                         <div className="text-xs text-blue-600 dark:text-blue-400 font-medium">{step.duration}</div>
                                     </div>
                                 </div>
@@ -441,8 +438,8 @@ const Service = () => {
                     className={`mb-20 transition-all duration-1000 delay-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Choose Your Package</h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Choose Your Package</h3>
+                        <p className="text-lg max-w-2xl mx-auto"style={{color:"var(--text-color)"}}>
                             Flexible pricing options designed to fit businesses of all sizes
                         </p>
                     </div>
@@ -470,15 +467,15 @@ const Service = () => {
                                 ></div>
 
                                 <div className="relative z-10">
-                                    <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{pkg.name}</h4>
+                                    <h4 className="text-2xl font-bold mb-2"style={{color:"var(--text-color)"}}>{pkg.name}</h4>
                                     <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">{pkg.price}</div>
-                                    <p className="text-gray-600 dark:text-gray-300 mb-6">{pkg.description}</p>
+                                    <p className="mb-6"style={{color:"var(--text-color)"}}>{pkg.description}</p>
 
                                     <div className="space-y-3 mb-8">
                                         {pkg.features.map((feature, idx) => (
                                             <div key={idx} className="flex items-center space-x-3">
                                                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                                                <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                                                <span style={{color:"var(--text-color)"}}>{feature}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -502,8 +499,8 @@ const Service = () => {
                     className={`mb-20 transition-all duration-1000 delay-1200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Technologies We Use</h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Technologies We Use</h3>
+                        <p className="text-lg max-w-2xl mx-auto"style={{color:"var(--text-color)"}}>
                             Cutting-edge tools and frameworks that power our solutions
                         </p>
                     </div>
@@ -516,8 +513,8 @@ const Service = () => {
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >
                                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{tech.icon}</div>
-                                <div className="text-sm font-semibold text-gray-900 dark:text-white mb-1">{tech.name}</div>
-                                <div className="text-xs text-gray-500">{tech.category}</div>
+                                <div className="text-sm font-semibold mb-1"style={{color:"var(--text-color)"}}>{tech.name}</div>
+                                <div className="text-xs"style={{color:"var(--text-color)"}}>{tech.category}</div>
                             </div>
                         ))}
                     </div>
@@ -528,8 +525,8 @@ const Service = () => {
                     className={`mb-20 transition-all duration-1000 delay-1400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Why Choose Us</h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Why Choose Us</h3>
+                        <p className="text-lg max-w-2xl mx-auto"style={{color:"var(--text-color)"}}>
                             The advantages that set us apart from the competition
                         </p>
                     </div>
@@ -544,8 +541,8 @@ const Service = () => {
                                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                                     <benefit.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{benefit.title}</h4>
-                                <p className="text-gray-600 dark:text-gray-300">{benefit.description}</p>
+                                <h4 className="text-xl font-semibold mb-3"style={{color:"var(--text-color)"}}>{benefit.title}</h4>
+                                <p style={{color:"var(--text-color)"}}>{benefit.description}</p>
                             </div>
                         ))}
                     </div>

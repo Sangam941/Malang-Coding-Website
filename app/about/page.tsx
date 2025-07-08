@@ -223,7 +223,7 @@ const AboutSection = () => {
             <section
                 ref={sectionRef}
                 id="about"
-                className="relative py-20 " style={{ backgroundColor: "var(--bg-color)" }}
+                className="relative py-15 " style={{ backgroundColor: "var(--bg-color)" }}
             >
                 {/* Background Elements */}
                 <div className="absolute inset-0">

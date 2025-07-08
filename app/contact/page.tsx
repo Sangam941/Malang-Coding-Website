@@ -78,24 +78,28 @@ const Contact = () => {
   ]
 
   return (
-    
-    <section ref={sectionRef} className="py-2 transition-colors duration-300">
+
+    <section ref={sectionRef} className="py-15 transition-colors duration-300">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
+          <div
+            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          >
+            <Phone className="w-4 h-4 text-blue-500" />
+            <span className="" style={{ color: "var(--text-color)" }}>Contact</span>
+          </div>
           <h2
-            className={`text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          style={{ color: "var(--text-color)" }}>
+            className={`text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+            style={{ color: "var(--text-color)" }}>
             Get In{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          style={{ color: "var(--text-color)" }}>
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+            style={{ color: "var(--text-color)" }}>
             Ready to start your project? Let's discuss how we can help bring your ideas to life.
           </p>
         </div>
@@ -103,12 +107,11 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div
-            className={`space-y-8 transition-all duration-1000 delay-400 ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-            }`}
+            className={`space-y-8 transition-all duration-1000 delay-400 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+              }`}
           >
             <div>
-              <h3 className="text-2xl font-bold mb-6"style={{ color: "var(--text-color)" }}>Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={info.title} className="flex items-start space-x-4">
@@ -116,9 +119,9 @@ const Contact = () => {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h4 className="font-semibold"style={{ color: "var(--text-color)" }}>{info.title}</h4>
-                      <p className=""style={{ color: "var(--text-color)" }}>{info.details}</p>
-                      <p className="text-sm"style={{ color: "var(--text-color)" }}>{info.description}</p>
+                      <h4 className="font-semibold" style={{ color: "var(--text-color)" }}>{info.title}</h4>
+                      <p className="" style={{ color: "var(--text-color)" }}>{info.details}</p>
+                      <p className="text-sm" style={{ color: "var(--text-color)" }}>{info.description}</p>
                     </div>
                   </div>
                 ))}
@@ -150,9 +153,8 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div
-            className={`transition-all duration-1000 delay-600 ${
-              isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-            }`}
+            className={`transition-all duration-1000 delay-600 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+              }`}
           >
             <div className="rounded-xl p-8 shadow-lg" style={{ backgroundColor: "var(--card-bg)" }}>
               <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Send us a message</h3>

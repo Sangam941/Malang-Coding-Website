@@ -2,13 +2,20 @@
 
 import { useState, useEffect } from "react"
 import { ArrowRight, Play, Code, Users, Award, Clock } from "lucide-react"
-import Image from "next/image"
+import Image from "next/image"    
 
-const HeroSection = () => {
+type HeroSectionProps = {
+  data: any; // Define the type of data if known
+}
+
+const HeroSection = ({data}: HeroSectionProps) => {
+
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+
     setIsVisible(true)
+
   }, [])
 
   const stats = [
@@ -46,7 +53,7 @@ const HeroSection = () => {
 
                 style={{color:"var(--text-color)"}}
               >
-                MalangCode{" "}
+                {data.name}{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Innovators
                 </span>
@@ -100,7 +107,8 @@ const HeroSection = () => {
             </div>
           </div>
           {/* Right Image */}
-          <Image src="/image/grp2.png" width={800} height={800} alt="Hero Image" className=" lg:block" />
+          {/* "/image/grp2.png" */}
+          <Image src={data.image} width={500} height={500} alt="Hero Image" className=" lg:block" />
 
         </div>
       </div>

@@ -223,7 +223,7 @@ const AboutSection = () => {
       <section
         ref={sectionRef}
         id="about"
-        className="relative py-20 " style={{ backgroundColor: "var(--bg-color)" }}
+        className="relative py-15 " style={{ backgroundColor: "var(--bg-color)" }}
       >
         {/* Background Elements */}
         <div className="absolute inset-0">
@@ -453,8 +453,16 @@ const AboutSection = () => {
           <div
             className={`mb-20 transition-all duration-1000 delay-1800 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
+            <div className="flex justify-center">
+              <div
+                className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+              >
+                <Users className="w-4 h-4 text-blue-500" />
+                <span className="" style={{ color: "var(--text-color)" }}>Our Team</span>
+              </div>
+            </div>
             <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Our Team</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Meet Our Team</h3>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-color)" }}>
                 Real feedback from real clients who trusted us with their projects
               </p>

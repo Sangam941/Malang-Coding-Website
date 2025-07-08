@@ -17,6 +17,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import { IoMdContact } from "react-icons/io";
 import { FaDiagramProject } from "react-icons/fa6";
 
+import Image from "next/image";
 const navLinks = [
   { name: "Home", href: "/", icon: HiHome },
   { name: "About", href: "/about", icon: HiQuestionMarkCircle },
@@ -54,7 +55,7 @@ export default function Navbar() {
             href="/"
             className="text-2xl font-bold text-blue-600 dark:text-white tracking-tight" style={{color:"var(--text-color)"}}
           >
-            MalangCode
+            {isDarkMode ? (<Image src="/image/logo-dark.png" className="h-13 w-13 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16.5 lg:w-16.5" alt="Logo" style={{ scale: "125%" }} width={65} height={65} />) : (<Image src="/image/logo-light.png" alt="Logo" className="h-13 w-13 sm:h-14 sm:w-14 md:h-15 md:w-15 lg:h-16.5 lg:w-16.5"  style={{ scale: "125%" }} width={65} height={65} />)}
           </Link>
 
           {/* Centered Nav Links */}

@@ -80,7 +80,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="relative  overflow-hidden" style={{ backgroundColor:" var(--bg-color) "}}>
+    <footer className="relative overflow-hidden" style={{backgroundColor:"var(--card-bg)"}}>
       {/* Decorative Waves */}
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

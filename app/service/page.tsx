@@ -24,27 +24,9 @@ import {
 } from "lucide-react"
 
 const Service = () => {
-    const [isVisible, setIsVisible] = useState(false)
     const [activeService, setActiveService] = useState(0)
     const [activeProcess, setActiveProcess] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true)
-                }
-            },
-            { threshold: 0.1 },
-        )
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current)
-        }
-
-        return () => observer.disconnect()
-    }, [])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -287,14 +269,14 @@ const Service = () => {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <div
-                        className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000`}
                     >
                           <Cog className="w-4 h-4 text-blue-500 animate-spin" />
                         <span style={{color:"var(--text-color)"}}>Our Services</span>
                     </div>
 
                     <h2
-                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300  ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300`}
                     style={{color:"var(--text-color)"}}>
                         Transforming Ideas Into{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -303,7 +285,7 @@ const Service = () => {
                     </h2>
 
                     <p
-                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300`}
                     style={{color:"var(--text-color)"}}>
                         From concept to deployment, we provide comprehensive digital solutions that drive growth, enhance user
                         experience, and deliver measurable results for your business.
@@ -312,7 +294,7 @@ const Service = () => {
 
                 {/* Main Services Grid */}
                 <div
-                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300`}
                 >
                     {services.map((service, index) => (
                         <div
@@ -378,7 +360,7 @@ const Service = () => {
 
                 {/* Process Section */}
                 <div
-                    className={`mb-20 transition-all duration-1000 delay-800 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`mb-20 transition-all duration-1000 delay-800`}
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Our Process</h3>
@@ -435,7 +417,7 @@ const Service = () => {
 
                 {/* Pricing Packages */}
                 <div
-                    className={`mb-20 transition-all duration-1000 delay-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`mb-20 transition-all duration-1000 delay-1000`}
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Choose Your Package</h3>
@@ -496,7 +478,7 @@ const Service = () => {
 
                 {/* Technologies */}
                 <div
-                    className={`mb-20 transition-all duration-1000 delay-1200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`mb-20 transition-all duration-1000 delay-1200`}
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Technologies We Use</h3>
@@ -522,7 +504,7 @@ const Service = () => {
 
                 {/* Benefits */}
                 <div
-                    className={`mb-20 transition-all duration-1000 delay-1400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`mb-20 transition-all duration-1000 delay-1400`}
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Why Choose Us</h3>
@@ -550,7 +532,7 @@ const Service = () => {
 
                 {/* CTA Section */}
                 <div
-                    className={`text-center transition-all duration-1000 delay-1600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`text-center transition-all duration-1000 delay-1600`}
                 >
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
                         <div className="absolute inset-0 bg-black/10"></div>

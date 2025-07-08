@@ -229,8 +229,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <h6 className="text-sm font-semibold" style={{color:"var(--text-color)"}}>Certifications</h6>
-                  <p className=" text-sm" style={{color:"var(--text-color)"}}>ISO 27001 Certified</p>
-                  <p className=" text-sm" style={{color:"var(--text-color)"}}>AWS Partner Network</p>
+                  <p className="text-sm" style={{color:"var(--text-color)"}}>ISO 27001 Certified</p>
+                  <p className="text-sm" style={{color:"var(--text-color)"}}>AWS Partner Network</p>
                 </div>
               </div>
             </div>

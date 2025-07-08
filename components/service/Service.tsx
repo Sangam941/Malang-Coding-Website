@@ -262,8 +262,8 @@ const Service = () => {
         <section
             ref={sectionRef}
             id="services"
-            className="relative py-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-slate-900 overflow-hidden transition-colors duration-300"
-           style={{ color: "var(--text-color)" }}>
+            className="relative py-10 bg-gradient-to-br from-white to-gray-50 overflow-hidden transition-colors duration-300"
+           style={{ color: "var(--text-color)", backgroundColor: "var(--bg-color)" }}>
             {/* Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"></div>

@@ -47,7 +47,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1
-                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-1000 delay-200 ${
+                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-500 delay-200 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
 
@@ -60,7 +60,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
               </h1>
 
               <p
-                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-1000 delay-400 ${
+                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-500 delay-400 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{color:"var(--text-color)"}}
@@ -72,18 +72,18 @@ const HeroSection = ({data}: HeroSectionProps) => {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-600 ${
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-500 delay-600 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/25">
+              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105 shadow-lg shadow-blue-500/25">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
 
-              <button className="group flex items-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+              <button className="group flex items-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105">
                 <Play className="w-5 h-5" />
                 <span>View Portfolio</span>
               </button>
@@ -91,7 +91,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
 
             {/* Stats */}
             <div
-              className={`grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 transition-all duration-1000 delay-800 ${
+              className={`grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 transition-all duration-500 delay-800 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { ArrowRight, Play, Code, Users, Award, Clock } from "lucide-react"
 import Image from "next/image"    
+import LazyIcon from "@/components/LazyIcon"
 
 type HeroSectionProps = {
   data: any; // Define the type of data if known
@@ -18,12 +19,12 @@ const HeroSection = ({data}: HeroSectionProps) => {
 
   }, [])
 
-  const stats = [
-    { number: "200+", label: "Projects Completed", icon: Code },
-    { number: "50+", label: "Happy Clients", icon: Users },
-    { number: "5+", label: "Years Experience", icon: Award },
-    { number: "24/7", label: "Support Available", icon: Clock },
-  ]
+  // const stats = [
+  //   { number: "+", label: "Projects Completed", icon: Code },
+  //   { number: "+", label: "Happy Clients", icon: Users },
+  //   { number: "+", label: "Years Experience", icon: Award },
+  //   { number: "24/7", label: "Support Available", icon: Clock },
+  // ]
 
   return (
     <section
@@ -95,10 +96,10 @@ const HeroSection = ({data}: HeroSectionProps) => {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              {stats.map((stat, index) => (
+              {data.map((stat:any, index:any) => (
                 <div key={index} className="text-center group">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-6 h-6 text-white" />
+                    <LazyIcon iconName={stat.icon} className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-2xl font-bold"style={{color:"var(--text-color)"}}>{stat.number}</div>
                   <div className="text-sm"style={{color:"var(--text-color)"}}>{stat.label}</div>

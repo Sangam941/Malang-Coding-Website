@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban } from "lucide-react"
+import Link from "next/link"
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -133,7 +134,7 @@ const ProjectsSection = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === filter.id
+              className={`cursor-pointer px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === filter.id
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                   : "bg-gray-100  text-gray-700  hover:bg-gray-200"
                 }`}
@@ -145,10 +146,10 @@ const ProjectsSection = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.slice(0,3).map((project, index) => (
             <div
               key={project.id}
-              className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
               style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
             >
@@ -202,6 +203,10 @@ const ProjectsSection = () => {
               </div>
             </div>
           ))}
+
+        </div>
+        <div className="flex justify-center py-10">
+          <Link href="/project"><button className="px-4 py-2 rounded-lg cursor-pointer text-white bg-gradient-to-r from-blue-600 to-purple-600">View More</button></Link>
         </div>
       </div>
     </section>

@@ -108,7 +108,11 @@ const HeroSection = ({data}: HeroSectionProps) => {
           </div>
           {/* Right Image */}
           {/* "/image/grp2.png" */}
+<<<<<<< HEAD
           <Image src="/image/grp2.png" width={500} height={500} alt="Hero Image" className=" lg:block" />
+=======
+          <Image src="/image/grp2.png" width={800} height={800} alt="Hero Image" className=" lg:block" />
+>>>>>>> 0b9a2d02eadf3089a5f5e65ec3c65588ec0c1402
 
         </div>
       </div>

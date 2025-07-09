@@ -201,7 +201,7 @@ const ProjectsSection = () => {
 
         </div>
         <div
-                    className={`py-10 text-center transition-all duration-1000 delay-1600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
                 >
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
                         <div className="absolute inset-0 bg-black/10"></div>

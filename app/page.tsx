@@ -9,7 +9,7 @@ import Service from "@/components/service/Service";
 export default function Home() {
   return (
     <>
-      {/* <HeroApi /> */}
+      <HeroApi />
       <AboutSection />
       <ProjectsSection />
       <Service />

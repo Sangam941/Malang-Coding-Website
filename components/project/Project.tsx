@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban } from "lucide-react"
+import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban, ArrowRight, Play } from "lucide-react"
 import Link from "next/link"
 
 const ProjectsSection = () => {
@@ -205,9 +205,28 @@ const ProjectsSection = () => {
           ))}
 
         </div>
-        <div className="flex justify-center py-10">
-          <Link href="/project"><button className="px-4 py-2 rounded-lg cursor-pointer text-white bg-gradient-to-r from-blue-600 to-purple-600">View More</button></Link>
-        </div>
+        <div
+                    className={`py-10 text-center transition-all duration-1000 delay-1600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                >
+                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
+                        <div className="absolute inset-0 bg-black/10"></div>
+                        <div className="relative z-10">
+                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Want to see more projects?</h3>
+                            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                                Please click on the button below, you will be redirected to our project page.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link href="/project" className="cursor-pointer group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                    <span className="flex items-center justify-center space-x-2">
+                                        <span>View More Project</span>
+                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
       </div>
     </section>
   )

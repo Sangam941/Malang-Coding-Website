@@ -18,10 +18,10 @@ import {
     Lightbulb,
     Rocket,
     HeadphonesIcon,
-    Play,
     Award,
     TrendingUp,
 } from "lucide-react"
+import Link from "next/link"
 
 const Service = () => {
     const [isVisible, setIsVisible] = useState(false)
@@ -348,22 +348,6 @@ const Service = () => {
                                     ))}
                                 </div>
 
-                                {/* Stats */}
-                                <div className="grid grid-cols-3 gap-4 mb-6">
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold"style={{color:"var(--text-color)"}}>{service.price}</div>
-                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Starting Price</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold"style={{color:"var(--text-color)"}}>{service.deliveryTime}</div>
-                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Delivery</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold text-green-600 dark:text-green-400">{service.projects}</div>
-                                        <div className="text-xs"style={{color:"var(--text-color)"}}>Projects</div>
-                                    </div>
-                                </div>
-
                                 {/* CTA */}
                                 <button className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
                                     <span className="flex items-center justify-center space-x-2">
@@ -401,34 +385,7 @@ const Service = () => {
                         ))}
                     </div>
                 </div>
-
-                {/* Benefits */}
-                <div
-                    className={`mb-20 transition-all duration-1000 delay-1400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-                >
-                    <div className="text-center mb-12">
-                        <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Why Choose Us</h3>
-                        <p className="text-lg max-w-2xl mx-auto"style={{color:"var(--text-color)"}}>
-                            The advantages that set us apart from the competition
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {benefits.map((benefit, index) => (
-                            <div
-                                key={benefit.title}
-                                className="group text-center p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 150}ms` }}
-                            >
-                                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                                    <benefit.icon className="w-8 h-8 text-white" />
-                                </div>
-                                <h4 className="text-xl font-semibold mb-3"style={{color:"var(--text-color)"}}>{benefit.title}</h4>
-                                <p style={{color:"var(--text-color)"}}>{benefit.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                
 
                 {/* CTA Section */}
                 <div
@@ -437,21 +394,17 @@ const Service = () => {
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
                         <div className="absolute inset-0 bg-black/10"></div>
                         <div className="relative z-10">
-                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h3>
+                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Explore our services</h3>
                             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                                Let's discuss your project requirements and create something amazing together
+                                Click on the button below to explore to explore our services
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                                <Link href="/service" className="group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
                                     <span className="flex items-center justify-center space-x-2">
                                         <span>Start Your Project</span>
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
-                                </button>
-                                <button className="group flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105">
-                                    <Play className="w-5 h-5" />
-                                    <span>View Portfolio</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

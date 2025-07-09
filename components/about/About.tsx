@@ -184,6 +184,19 @@ const AboutSection = () => {
   // Removed unused testimonialIndex and setTestimonialIndex (now handled by react-slick)
   const sectionRef = useRef<HTMLElement>(null)
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animateCounters()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   const animateCounters = () => {
     const targets = { projects: 500, clients: 150, experience: 5, satisfaction: 99 }
     const duration = 2000

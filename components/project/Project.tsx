@@ -5,7 +5,6 @@ import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban } f
 import Link from "next/link"
 
 const ProjectsSection = () => {
-  const [isVisible, setIsVisible] = useState(false)
   const [activeFilter, setActiveFilter] = useState("all")
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -13,7 +12,7 @@ const ProjectsSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          
         }
       },
       { threshold: 0.1 },
@@ -105,21 +104,19 @@ const ProjectsSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
           >
             <FolderKanban className="w-4 h-4 text-blue-500" />
             <span className="" style={{ color: "var(--text-color)" }}>Our Projects</span>
           </div>
           <h2
-            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
             style={{ color: "var(--text-color)" }}>
             Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
             style={{ color: "var(--text-color)" }}>
             Explore our portfolio of successful projects that have helped businesses achieve their digital goals.
           </p>
@@ -127,8 +124,7 @@ const ProjectsSection = () => {
 
         {/* Filter Buttons */}
         <div
-          className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-1000 delay-400 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
+          className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-1000 delay-400 translate-y-0 opacity-100`}
         >
           {filters.map((filter) => (
             <button
@@ -149,8 +145,7 @@ const ProjectsSection = () => {
           {filteredProjects.slice(0,3).map((project, index) => (
             <div
               key={project.id}
-              className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
+              className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
               style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">

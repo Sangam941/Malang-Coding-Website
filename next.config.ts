@@ -2,7 +2,13 @@ import type { NextConfig } from 'next'
  
 const config: NextConfig = {
   images: {
-    remotePatterns: [new URL('https://malangcode.pythonanywhere.com/media/hero_images/**')],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'malangcode.pythonanywhere.com',
+      },
+    ],
+
   },
 }
  

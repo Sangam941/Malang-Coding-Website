@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
 import {
   Users,
@@ -26,40 +27,6 @@ import {
 } from "lucide-react"
 import Contact from "../contact/Contact"
 
-const teamMembers = [
-  {
-    name: "Ahmad Rahman",
-    role: "CEO & Founder",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Visionary leader with 10+ years in tech innovation",
-    skills: ["Leadership", "Strategy", "Innovation"],
-    social: { linkedin: "#", twitter: "#", github: "#" },
-  },
-  {
-    name: "Sarah Johnson",
-    role: "CTO",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Full-stack architect passionate about scalable solutions",
-    skills: ["Architecture", "Cloud", "DevOps"],
-    social: { linkedin: "#", twitter: "#", github: "#" },
-  },
-  {
-    name: "David Chen",
-    role: "Lead Developer",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Expert in modern web technologies and mobile development",
-    skills: ["React", "Node.js", "Mobile"],
-    social: { linkedin: "#", twitter: "#", github: "#" },
-  },
-  {
-    name: "Maria Garcia",
-    role: "UI/UX Designer",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Creative designer focused on user-centered experiences",
-    skills: ["Design", "Prototyping", "Research"],
-    social: { linkedin: "#", twitter: "#", github: "#" },
-  },
-]
 
 const values = [
   {
@@ -84,44 +51,44 @@ const values = [
   },
 ]
 
-const timeline = [
-  {
-    year: "2019",
-    title: "Company Founded",
-    description: "Started with a vision to transform digital experiences",
-    icon: Rocket,
-  },
-  {
-    year: "2020",
-    title: "First Major Client",
-    description: "Delivered our first enterprise-level solution",
-    icon: Award,
-  },
-  {
-    year: "2021",
-    title: "Team Expansion",
-    description: "Grew to 15+ talented developers and designers",
-    icon: Users,
-  },
-  {
-    year: "2022",
-    title: "100+ Projects",
-    description: "Reached milestone of 100 successful project deliveries",
-    icon: TrendingUp,
-  },
-  {
-    year: "2023",
-    title: "Global Recognition",
-    description: "Received industry awards for innovation and excellence",
-    icon: Star,
-  },
-  {
-    year: "2024",
-    title: "AI Integration",
-    description: "Leading the way in AI-powered development solutions",
-    icon: Brain,
-  },
-]
+// const timeline = [
+//   {
+//     year: "2019",
+//     title: "Company Founded",
+//     description: "Started with a vision to transform digital experiences",
+//     icon: Rocket,
+//   },
+//   {
+//     year: "2020",
+//     title: "First Major Client",
+//     description: "Delivered our first enterprise-level solution",
+//     icon: Award,
+//   },
+//   {
+//     year: "2021",
+//     title: "Team Expansion",
+//     description: "Grew to 15+ talented developers and designers",
+//     icon: Users,
+//   },
+//   {
+//     year: "2022",
+//     title: "100+ Projects",
+//     description: "Reached milestone of 100 successful project deliveries",
+//     icon: TrendingUp,
+//   },
+//   {
+//     year: "2023",
+//     title: "Global Recognition",
+//     description: "Received industry awards for innovation and excellence",
+//     icon: Star,
+//   },
+//   {
+//     year: "2024",
+//     title: "AI Integration",
+//     description: "Leading the way in AI-powered development solutions",
+//     icon: Brain,
+//   },
+// ]
 
 const technologies = [
   { name: "React", level: 95, icon: Code },
@@ -174,7 +141,7 @@ const testimonials = [
   },
 ]
 
-const AboutSection = () => {
+const AboutSection = ({teamMembers, timeline}:any) => {
   const [counters, setCounters] = useState({
     projects: 0,
     clients: 0,
@@ -312,20 +279,7 @@ const AboutSection = () => {
                 We believe great software is about understanding your business, users, and goals. Every project is a
                 partnership aimed at creating lasting digital success.
               </p>
-              <div className="flex items-center space-x-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">200+</div>
-                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
-                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 dark:text-green-400">99%</div>
-                  <div className="text-sm " style={{ color: "var(--text-color)" }}>Success Rate</div>
-                </div>
-              </div>
+            
             </div>
 
             {/* Right Content */}
@@ -386,7 +340,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
               <div className="space-y-12">
-                {timeline.map((item, index) => (
+                {timeline.map((item:any, index:any) => (
                   <div
                     key={item.year}
                     className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
@@ -400,7 +354,7 @@ const AboutSection = () => {
                       </div>
                     </div>
                     <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
-                      <item.icon className="w-6 h-6 text-white" />
+                      <LazyIcon iconName={item.icon} className="w-6 h-6 text-white" />
                     </div>
                     <div className="w-1/2"></div>
                   </div>
@@ -496,7 +450,7 @@ const AboutSection = () => {
                 swipeToSlide={true}
                 draggable={true}
               >
-                {testimonials.map((testimonial, i) => (
+                {teamMembers.map((testimonial:any, i:any) => (
                   <div key={testimonial.name + i} className="px-5 py-10 testimonial-slide">
                     <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl transition-all duration-300 h-full flex flex-col justify-between">
                       {/* Image at the top, centered, rounded, even larger size */}
@@ -511,7 +465,7 @@ const AboutSection = () => {
                       </div>
                       <Quote className="w-8 h-8 text-blue-500 mb-4 mx-auto" />
                       <p className="mb-6 italic text-center" style={{ color: "var(--text-color)" }}>
-                        &quot;{testimonial.content}&quot;
+                        &quot;{testimonial.bio}&quot;
                       </p>
                       <div className="flex items-center justify-center space-x-4 mb-2" style={{ color: "var(--text-color)" }}>
                         <div>

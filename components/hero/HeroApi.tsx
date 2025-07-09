@@ -6,7 +6,7 @@ const HeroApi = async () => {
     const res = await axios.get('https://malangcode.pythonanywhere.com/api/stats');
     const data = res.data;
     console.log(data)
-    return <HeroSection  data = {data}/>
+    return <HeroSection data = {data}/>
 }
 
 export default HeroApi

@@ -24,7 +24,6 @@ import {
     Calendar,
     TrendingUp,
 } from "lucide-react"
-import Contact from "../contact/Contact"
 
 const teamMembers = [
     {

@@ -3,6 +3,7 @@ import axios from 'axios';
 import AboutSection from '@/components/about/About';
 
 const HeroApi = async () => {
+              
   const [res, res2] = await Promise.all([
     axios.get('https://malangcode.pythonanywhere.com/api/team-members'),
     axios.get('https://malangcode.pythonanywhere.com/api/time-line')

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban } from "lucide-react"
+import Image from "next/image"
 
 const ProjectsSection = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -158,10 +159,12 @@ const ProjectsSection = () => {
               style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">
-                <img
+                <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-48 object-cover"
+                  width={500}
+                  height={300}
                 />
                 <div className="absolute inset-0 bg-black/50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <a

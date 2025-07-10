@@ -1,29 +1,30 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban, ArrowRight, Play } from "lucide-react"
+import { useState, useRef } from "react"
+import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all")
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
           
-        }
-      },
-      { threshold: 0.1 },
-    )
+  //       }
+  //     },
+  //     { threshold: 0.1 },
+  //   )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current)
+  //   }
 
-    return () => observer.disconnect()
-  }, [])
+  //   return () => observer.disconnect()
+  // }, [])
 
   const filters = [
     { id: "all", name: "All Projects" },
@@ -149,10 +150,13 @@ const ProjectsSection = () => {
               style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">
-                <img
+                <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-48 object-cover"
+                  width={500}
+                  height={300}
+                  
                 />
                 <div className="absolute inset-0 bg-black/50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <a

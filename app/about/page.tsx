@@ -19,46 +19,45 @@ import {
     Rocket,
     Star,
     CheckCircle,
-    ArrowRight,
     Quote,
     Calendar,
     TrendingUp,
 } from "lucide-react"
 
-const teamMembers = [
-    {
-        name: "Ahmad Rahman",
-        role: "CEO & Founder",
-        image: "/placeholder.svg?height=300&width=300",
-        bio: "Visionary leader with 10+ years in tech innovation",
-        skills: ["Leadership", "Strategy", "Innovation"],
-        social: { linkedin: "#", twitter: "#", github: "#" },
-    },
-    {
-        name: "Sarah Johnson",
-        role: "CTO",
-        image: "/placeholder.svg?height=300&width=300",
-        bio: "Full-stack architect passionate about scalable solutions",
-        skills: ["Architecture", "Cloud", "DevOps"],
-        social: { linkedin: "#", twitter: "#", github: "#" },
-    },
-    {
-        name: "David Chen",
-        role: "Lead Developer",
-        image: "/placeholder.svg?height=300&width=300",
-        bio: "Expert in modern web technologies and mobile development",
-        skills: ["React", "Node.js", "Mobile"],
-        social: { linkedin: "#", twitter: "#", github: "#" },
-    },
-    {
-        name: "Maria Garcia",
-        role: "UI/UX Designer",
-        image: "/placeholder.svg?height=300&width=300",
-        bio: "Creative designer focused on user-centered experiences",
-        skills: ["Design", "Prototyping", "Research"],
-        social: { linkedin: "#", twitter: "#", github: "#" },
-    },
-]
+// const teamMembers = [
+//     {
+//         name: "Ahmad Rahman",
+//         role: "CEO & Founder",
+//         image: "/placeholder.svg?height=300&width=300",
+//         bio: "Visionary leader with 10+ years in tech innovation",
+//         skills: ["Leadership", "Strategy", "Innovation"],
+//         social: { linkedin: "#", twitter: "#", github: "#" },
+//     },
+//     {
+//         name: "Sarah Johnson",
+//         role: "CTO",
+//         image: "/placeholder.svg?height=300&width=300",
+//         bio: "Full-stack architect passionate about scalable solutions",
+//         skills: ["Architecture", "Cloud", "DevOps"],
+//         social: { linkedin: "#", twitter: "#", github: "#" },
+//     },
+//     {
+//         name: "David Chen",
+//         role: "Lead Developer",
+//         image: "/placeholder.svg?height=300&width=300",
+//         bio: "Expert in modern web technologies and mobile development",
+//         skills: ["React", "Node.js", "Mobile"],
+//         social: { linkedin: "#", twitter: "#", github: "#" },
+//     },
+//     {
+//         name: "Maria Garcia",
+//         role: "UI/UX Designer",
+//         image: "/placeholder.svg?height=300&width=300",
+//         bio: "Creative designer focused on user-centered experiences",
+//         skills: ["Design", "Prototyping", "Research"],
+//         social: { linkedin: "#", twitter: "#", github: "#" },
+//     },
+// ]
 
 const values = [
     {

@@ -42,7 +42,7 @@ const LazyIcon = ({ iconName, className, ...rest }: LazyIconProps) => {
       if (!Icon) throw new Error(`Icon "${realIconName}" not found`);
 
       return {
-        default: (props: any) => <Icon className={className} {...rest} />,
+        default: (props: any) => <Icon className={className} {...rest} {...props} />,
       };
     } catch (err) {
       console.error("Icon load error:", err);

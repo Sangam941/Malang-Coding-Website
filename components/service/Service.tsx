@@ -1,8 +1,7 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import {
-    Code,
     Smartphone,
     Globe,
     Database,
@@ -10,49 +9,38 @@ import {
     Palette,
     Cloud,
     Cog,
-    Users,
     ArrowRight,
     CheckCircle,
-    Clock,
-    Target,
-    Lightbulb,
-    Rocket,
-    HeadphonesIcon,
-    Award,
-    TrendingUp,
 } from "lucide-react"
 import Link from "next/link"
 
 const Service = () => {
-    const [isVisible, setIsVisible] = useState(false)
-    const [activeService, setActiveService] = useState(0)
-    const [activeProcess, setActiveProcess] = useState(0)
+    // const [activeProcess, setActiveProcess] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true)
-                }
-            },
-            { threshold: 0.1 },
-        )
+    // useEffect(() => {
+    //     const observer = new IntersectionObserver(
+    //         ([entry]) => {
+    //             if (entry.isIntersecting) {
+    //             }
+    //         },
+    //         { threshold: 0.1 },
+    //     )
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current)
-        }
+    //     if (sectionRef.current) {
+    //         observer.observe(sectionRef.current)
+    //     }
 
-        return () => observer.disconnect()
-    }, [])
+    //     return () => observer.disconnect()
+    // }, [])
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveProcess((prev) => (prev + 1) % processSteps.length)
-        }, 3000)
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setActiveProcess((prev) => (prev + 1) % processSteps.length)
+    //     }, 3000)
 
-        return () => clearInterval(interval)
-    }, [])
+    //     return () => clearInterval(interval)
+    // }, [])
 
     const services = [
         {
@@ -117,102 +105,51 @@ const Service = () => {
         },
     ]
 
-    const processSteps = [
-        {
-            step: "01",
-            title: "Discovery & Planning",
-            description: "We analyze your requirements and create a detailed project roadmap",
-            icon: Lightbulb,
-            duration: "1-2 weeks",
-        },
-        {
-            step: "02",
-            title: "Design & Prototyping",
-            description: "Creating wireframes, mockups, and interactive prototypes",
-            icon: Palette,
-            duration: "2-3 weeks",
-        },
-        {
-            step: "03",
-            title: "Development",
-            description: "Building your solution with cutting-edge technologies",
-            icon: Code,
-            duration: "4-12 weeks",
-        },
-        {
-            step: "04",
-            title: "Testing & QA",
-            description: "Rigorous testing to ensure quality and performance",
-            icon: CheckCircle,
-            duration: "1-2 weeks",
-        },
-        {
-            step: "05",
-            title: "Deployment",
-            description: "Launching your solution and ensuring smooth operation",
-            icon: Rocket,
-            duration: "1 week",
-        },
-        {
-            step: "06",
-            title: "Support & Maintenance",
-            description: "Ongoing support and continuous improvements",
-            icon: HeadphonesIcon,
-            duration: "Ongoing",
-        },
-    ]
+    // const processSteps = [
+    //     {
+    //         step: "01",
+    //         title: "Discovery & Planning",
+    //         description: "We analyze your requirements and create a detailed project roadmap",
+    //         icon: Lightbulb,
+    //         duration: "1-2 weeks",
+    //     },
+    //     {
+    //         step: "02",
+    //         title: "Design & Prototyping",
+    //         description: "Creating wireframes, mockups, and interactive prototypes",
+    //         icon: Palette,
+    //         duration: "2-3 weeks",
+    //     },
+    //     {
+    //         step: "03",
+    //         title: "Development",
+    //         description: "Building your solution with cutting-edge technologies",
+    //         icon: Code,
+    //         duration: "4-12 weeks",
+    //     },
+    //     {
+    //         step: "04",
+    //         title: "Testing & QA",
+    //         description: "Rigorous testing to ensure quality and performance",
+    //         icon: CheckCircle,
+    //         duration: "1-2 weeks",
+    //     },
+    //     {
+    //         step: "05",
+    //         title: "Deployment",
+    //         description: "Launching your solution and ensuring smooth operation",
+    //         icon: Rocket,
+    //         duration: "1 week",
+    //     },
+    //     {
+    //         step: "06",
+    //         title: "Support & Maintenance",
+    //         description: "Ongoing support and continuous improvements",
+    //         icon: HeadphonesIcon,
+    //         duration: "Ongoing",
+    //     },
+    // ]
 
-    const packages = [
-        {
-            name: "Starter",
-            price: "$2,999",
-            description: "Perfect for small businesses and startups",
-            features: [
-                "Custom Website/App",
-                "Responsive Design",
-                "Basic SEO",
-                "3 Months Support",
-                "Source Code",
-                "Documentation",
-            ],
-            popular: false,
-            color: "from-gray-500 to-gray-600",
-        },
-        {
-            name: "Professional",
-            price: "$7,999",
-            description: "Ideal for growing businesses",
-            features: [
-                "Everything in Starter",
-                "Advanced Features",
-                "Database Integration",
-                "API Development",
-                "6 Months Support",
-                "Performance Optimization",
-                "Security Implementation",
-                "Analytics Integration",
-            ],
-            popular: true,
-            color: "from-blue-500 to-purple-600",
-        },
-        {
-            name: "Enterprise",
-            price: "Custom",
-            description: "For large-scale applications",
-            features: [
-                "Everything in Professional",
-                "Custom Architecture",
-                "Scalable Infrastructure",
-                "Advanced Security",
-                "12 Months Support",
-                "Dedicated Team",
-                "Priority Support",
-                "Training & Consultation",
-            ],
-            popular: false,
-            color: "from-purple-500 to-pink-500",
-        },
-    ]
 
     const technologies = [
         { name: "React", icon: "⚛️", category: "Frontend" },
@@ -225,38 +162,38 @@ const Service = () => {
         { name: "TypeScript", icon: "📘", category: "Language" },
     ]
 
-    const benefits = [
-        {
-            icon: Target,
-            title: "Results-Driven",
-            description: "We focus on delivering measurable business outcomes",
-        },
-        {
-            icon: Clock,
-            title: "On-Time Delivery",
-            description: "98% of our projects are delivered on or ahead of schedule",
-        },
-        {
-            icon: Award,
-            title: "Quality Assured",
-            description: "Rigorous testing and quality control processes",
-        },
-        {
-            icon: Users,
-            title: "Expert Team",
-            description: "Certified professionals with years of experience",
-        },
-        {
-            icon: TrendingUp,
-            title: "Scalable Solutions",
-            description: "Built to grow with your business needs",
-        },
-        {
-            icon: HeadphonesIcon,
-            title: "24/7 Support",
-            description: "Round-the-clock support and maintenance",
-        },
-    ]
+    // const benefits = [
+    //     {
+    //         icon: Target,
+    //         title: "Results-Driven",
+    //         description: "We focus on delivering measurable business outcomes",
+    //     },
+    //     {
+    //         icon: Clock,
+    //         title: "On-Time Delivery",
+    //         description: "98% of our projects are delivered on or ahead of schedule",
+    //     },
+    //     {
+    //         icon: Award,
+    //         title: "Quality Assured",
+    //         description: "Rigorous testing and quality control processes",
+    //     },
+    //     {
+    //         icon: Users,
+    //         title: "Expert Team",
+    //         description: "Certified professionals with years of experience",
+    //     },
+    //     {
+    //         icon: TrendingUp,
+    //         title: "Scalable Solutions",
+    //         description: "Built to grow with your business needs",
+    //     },
+    //     {
+    //         icon: HeadphonesIcon,
+    //         title: "24/7 Support",
+    //         description: "Round-the-clock support and maintenance",
+    //     },
+    // ]
 
     return (
         <section
@@ -287,14 +224,14 @@ const Service = () => {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <div
-                        className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
                     >
                           <Cog className="w-4 h-4 text-blue-500 animate-spin" />
                         <span style={{color:"var(--text-color)"}}>Our Services</span>
                     </div>
 
                     <h2
-                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300  ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300  translate-y-0 opacity-100`}
                     style={{color:"var(--text-color)"}}>
                         Transforming Ideas Into{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -303,7 +240,7 @@ const Service = () => {
                     </h2>
 
                     <p
-                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300 translate-y-0 opacity-100`}
                     style={{color:"var(--text-color)"}}>
                         From concept to deployment, we provide comprehensive digital solutions that drive growth, enhance user
                         experience, and deliver measurable results for your business.
@@ -312,14 +249,13 @@ const Service = () => {
 
                 {/* Main Services Grid */}
                 <div
-                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 translate-y-0 opacity-100`}
                 >
                     {services.map((service, index) => (
                         <div
                             key={service.title}
                             className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                             style={{ animationDelay: `${index * 150}ms` }}
-                            onMouseEnter={() => setActiveService(index)}
                         >
                             {/* Gradient Background */}
                             <div
@@ -362,7 +298,7 @@ const Service = () => {
                 
                 {/* Technologies */}
                 <div
-                    className={`mb-20 transition-all duration-1000 delay-1200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`mb-20 transition-all duration-1000 delay-1200 translate-y-0 opacity-100`}
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4"style={{color:"var(--text-color)"}}>Technologies We Use</h3>
@@ -389,7 +325,7 @@ const Service = () => {
 
                 {/* CTA Section */}
                 <div
-                    className={`text-center transition-all duration-1000 delay-1600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+                    className={`text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
                 >
                     <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
                         <div className="absolute inset-0 bg-black/10"></div>

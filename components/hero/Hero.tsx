@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowRight, Play, Code, Users, Award, Clock } from "lucide-react"
+import { ArrowRight, Play } from "lucide-react"
 import Image from "next/image"    
 import LazyIcon from "@/components/LazyIcon"
 

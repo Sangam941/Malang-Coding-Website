@@ -17,16 +17,11 @@ import {
   Smartphone,
   Database,
   Brain,
-  Rocket,
   Star,
   CheckCircle,
-  ArrowRight,
   Quote,
   Calendar,
-  TrendingUp,
 } from "lucide-react"
-import Contact from "../contact/Contact"
-
 
 const values = [
   {
@@ -99,47 +94,47 @@ const technologies = [
   { name: "AI/ML", level: 80, icon: Brain },
 ]
 
-const testimonials = [
-  {
-    name: "Bibek Adhikari ",
-    role: "CEO, TechCorp",
-    content:
-      "Malang Coders transformed our digital presence completely. Their attention exceeded our expectations.",
-    rating: 5,
-    image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-  },
-  {
-    name: "Rahish",
-    role: "Founder, StartupXYZ",
-    content: "Working with this team was a game-changer. They delivered our MVP ahead of schedule and within budget.",
-    rating: 5,
-    image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-  },
-  {
-    name: "Om Pant",
-    role: "CTO, InnovateLab",
-    content:
-      "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-    rating: 5,
-    image: "/image/pexels-photo-2379004.jpeg",
-  },
-  {
-    name: "Sudhin",
-    role: "CTO, InnovateLab",
-    content:
-      "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-    rating: 5,
-    image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-  },
-  {
-    name: "Sangam Singh Dhami",
-    role: "CTO, InnovateLab",
-    content:
-      "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-    rating: 5,
-    image: "/image/pexels-photo-2379004.jpeg",
-  },
-]
+// const testimonials = [
+//   {
+//     name: "Bibek Adhikari ",
+//     role: "CEO, TechCorp",
+//     content:
+//       "Malang Coders transformed our digital presence completely. Their attention exceeded our expectations.",
+//     rating: 5,
+//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+//   },
+//   {
+//     name: "Rahish",
+//     role: "Founder, StartupXYZ",
+//     content: "Working with this team was a game-changer. They delivered our MVP ahead of schedule and within budget.",
+//     rating: 5,
+//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+//   },
+//   {
+//     name: "Om Pant",
+//     role: "CTO, InnovateLab",
+//     content:
+//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
+//     rating: 5,
+//     image: "/image/pexels-photo-2379004.jpeg",
+//   },
+//   {
+//     name: "Sudhin",
+//     role: "CTO, InnovateLab",
+//     content:
+//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
+//     rating: 5,
+//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
+//   },
+//   {
+//     name: "Sangam Singh Dhami",
+//     role: "CTO, InnovateLab",
+//     content:
+//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
+//     rating: 5,
+//     image: "/image/pexels-photo-2379004.jpeg",
+//   },
+// ]
 
 const AboutSection = ({teamMembers, timeline}:any) => {
   const [counters, setCounters] = useState({

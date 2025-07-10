@@ -100,7 +100,7 @@ const Contact = () => {
             className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             style={{ color: "var(--text-color)" }}>
-            Ready to start your project? Let's discuss how we can help bring your ideas to life.
+            Ready to start your project? Let&apos;s discuss how we can help bring your ideas to life.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={info.title} className="flex items-start space-x-4">
+                  <div key={index} className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
@@ -131,7 +131,7 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
               <h4 className="text-xl font-bold mb-4">Ready to Get Started?</h4>
               <p className="mb-6">
-                We're here to help bring your ideas to life. Let's discuss your project and create something amazing
+                We&apos;re here to help bring your ideas to life. Let&apos;s discuss your project and create something amazing
                 together.
               </p>
               <div className="flex items-center space-x-4">

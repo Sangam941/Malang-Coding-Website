@@ -25,7 +25,6 @@ import {
 
 const Service = () => {
     const [isVisible, setIsVisible] = useState(false)
-    const [activeService, setActiveService] = useState(0)
     const [activeProcess, setActiveProcess] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)
 
@@ -52,7 +51,7 @@ const Service = () => {
         }, 3000)
 
         return () => clearInterval(interval)
-    }, [])
+    })
 
     const services = [
         {
@@ -319,7 +318,6 @@ const Service = () => {
                             key={service.title}
                             className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                             style={{ animationDelay: `${index * 150}ms` }}
-                            onMouseEnter={() => setActiveService(index)}
                         >
                             {/* Gradient Background */}
                             <div
@@ -557,7 +555,7 @@ const Service = () => {
                         <div className="relative z-10">
                             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h3>
                             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                                Let's discuss your project requirements and create something amazing together
+                                Let&apos;s discuss your project requirements and create something amazing together
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <button className="group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">

@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+// import { useState } from "react"
 import {
   Code,
   Mail,
@@ -14,31 +14,29 @@ import {
   Instagram,
   Github,
   ArrowRight,
-  Send,
-  Heart,
   ExternalLink,
 } from "lucide-react"
 
 const Footer = () => {
-  const [email, setEmail] = useState("")
-  const [isSubscribing, setIsSubscribing] = useState(false)
-  const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle")
+  // const [email, setEmail] = useState("")
+  // const [isSubscribing, setIsSubscribing] = useState(false)
+  // const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubscribing(true)
+  // const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setIsSubscribing(true)
 
-    // Simulate newsletter subscription
-    setTimeout(() => {
-      setIsSubscribing(false)
-      setSubscribeStatus("success")
-      setEmail("")
+  //   // Simulate newsletter subscription
+  //   setTimeout(() => {
+  //     setIsSubscribing(false)
+  //     setSubscribeStatus("success")
+  //     setEmail("")
 
-      setTimeout(() => {
-        setSubscribeStatus("idle")
-      }, 3000)
-    }, 1500)
-  }
+  //     setTimeout(() => {
+  //       setSubscribeStatus("idle")
+  //     }, 3000)
+  //   }, 1500)
+  // }
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -203,7 +201,7 @@ const Footer = () => {
               <div className="flex flex-wrap justify-center md:justify-end space-x-6" >
                 {legalLinks.map((link, index) => (
                   <a
-                    key={link.name}
+                    key={index}
                     href={link.href}
                     className=" hover:text-white transition-colors duration-300 text-sm flex items-center space-x-1" style={{color:"var(--text-color)"}}
                   >

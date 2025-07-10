@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import { Mail, Phone, MapPin, Send, CheckCircle, User, Building } from "lucide-react"
 
 const Contact = () => {
@@ -15,18 +15,18 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) =>
-      { threshold: 0.1 },
-    )
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) =>
+  //     { threshold: 0.1 },
+  //   )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current)
+  //   }
 
-    return () => observer.disconnect()
-  }, [])
+  //   return () => observer.disconnect()
+  // }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -94,7 +94,7 @@ const Contact = () => {
           <p
             className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
             style={{ color: "var(--text-color)" }}>
-            Ready to start your project? Let's discuss how we can help bring your ideas to life.
+            Ready to start your project? Let&apos;s discuss how we can help bring your ideas to life.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={info.title} className="flex items-start space-x-4">
+                  <div key={index} className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
@@ -124,7 +124,7 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
               <h4 className="text-xl font-bold mb-4">Ready to Get Started?</h4>
               <p className="mb-6">
-                We're here to help bring your ideas to life. Let's discuss your project and create something amazing
+                We&apos;re here to help bring your ideas to life. Let&apos;s discuss your project and create something amazing
                 together.
               </p>
               <div className="flex items-center space-x-4">

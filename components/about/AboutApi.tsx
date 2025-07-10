@@ -11,7 +11,6 @@ const HeroApi = async () => {
   const data = res.data;
   const data2 = res2.data;
 
-  console.log(data2);
 
   return <AboutSection teamMembers={data} timeline={data2} />;
 };

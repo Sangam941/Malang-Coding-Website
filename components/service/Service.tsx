@@ -1,6 +1,9 @@
 "use client"
 
 import { useRef } from "react"
+import dynamic from "next/dynamic"
+// Dynamically import react-slick to avoid SSR issues
+const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import {
     Smartphone,
     Globe,
@@ -248,52 +251,72 @@ const Service = () => {
                 </div>
 
                 {/* Main Services Grid */}
-                <div
-                    className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 translate-y-0 opacity-100`}
-                >
+                <div className="mb-20">
+                  <Slider
+                    dots={true}
+                    infinite={true}
+                    speed={500}
+                    slidesToShow={3}
+                    slidesToScroll={1}
+                    arrows={true}
+                    autoplay={true}
+                    autoplaySpeed={4000}
+                    responsive={[
+                      {
+                        breakpoint: 1024,
+                        settings: { slidesToShow: 2 }
+                      },
+                      {
+                        breakpoint: 640,
+                        settings: { slidesToShow: 1 }
+                      }
+                    ]}
+                  >
                     {services.map((service, index) => (
+                      <div key={service.title} className="px-2">
                         <div
-                            key={service.title}
-                            className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
-                            style={{ animationDelay: `${index * 150}ms` }}
+                          className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                          style={{ animationDelay: `${index * 150}ms` }}
                         >
-                            {/* Gradient Background */}
-                            <div
-                                className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                            ></div>
+                          {/* Gradient Background */}
+                          <div
+                            className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                          ></div>
 
-                            {/* Icon */}
-                            <div
-                                className={`relative w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                            >
-                                <service.icon className="w-8 h-8 text-white" />
-                            </div>
+                          {/* Icon */}
+                          <div
+                            className={`relative w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                          >
+                            <service.icon className="w-8 h-8 text-white" />
+                          </div>
 
-                            {/* Content */}
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-bold mb-3"style={{color:"var(--text-color)"}}>{service.title}</h3>
-                                <p className="mb-6 leading-relaxed"style={{color:"var(--text-color)"}}>{service.description}</p>
+                          {/* Content */}
+                          <div className="relative z-10">
+                            <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--text-color)" }}>{service.title}</h3>
+                            <p className="mb-6 leading-relaxed" style={{ color: "var(--text-color)" }}>{service.description}</p>
 
-                                {/* Features */}
-                                <div className="space-y-2 mb-6">
-                                    {service.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center space-x-2">
-                                            <CheckCircle className="w-4 h-4 text-green-500" />
-                                            <span className="text-sm"style={{color:"var(--text-color)"}}>{feature}</span>
-                                        </div>
-                                    ))}
+                            {/* Features */}
+                            <div className="space-y-2 mb-6">
+                              {service.features.map((feature, idx) => (
+                                <div key={idx} className="flex items-center space-x-2">
+                                  <CheckCircle className="w-4 h-4 text-green-500" />
+                                  <span className="text-sm" style={{ color: "var(--text-color)" }}>{feature}</span>
                                 </div>
-
-                                {/* CTA */}
-                                <button className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
-                                    <span className="flex items-center justify-center space-x-2">
-                                        <span>Learn More</span>
-                                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                    </span>
-                                </button>
+                              ))}
                             </div>
+
+                            {/* CTA */}
+                            <button className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
+                              <span className="flex items-center justify-center space-x-2">
+                                <span>Learn More</span>
+                                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                              </span>
+                            </button>
+                          </div>
                         </div>
+                      </div>
                     ))}
+                  </Slider>
                 </div>
                 
                 {/* Technologies */}

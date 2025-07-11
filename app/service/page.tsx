@@ -432,9 +432,9 @@ const Service = () => {
                             ))}
                         </div>
 
-                        <div className="md:hidden border-2 border-red-800 p-5">
+                        <div className="md:hidden p-5">
                             <Slider
-                            className="border-2 border-green-600 p-5"
+                            
                                 dots={true}
                                 infinite={true}
                                 speed={500}

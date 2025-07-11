@@ -278,9 +278,9 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                                     >
                                         <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
                                             <div className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
-                                                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">{item.year}</div>
-                                                <h4 className="text-xl font-semibold mb-2" style={{ color: "var(--text-color)" }}>{item.title}</h4>
-                                                <p className="" style={{ color: "var(--text-color)" }}>{item.description}</p>
+                                                <div className="max-md:text-xl text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">{item.year}</div>
+                                                <h4 className="max-md:text-lg text-xl font-semibold mb-2" style={{ color: "var(--text-color)" }}>{item.title}</h4>
+                                                <p className="max-md:text-sm" style={{ color: "var(--text-color)" }}>{item.description}</p>
                                             </div>
                                         </div>
                                         <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
@@ -387,7 +387,7 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                                             </div>
                                             <Quote className="w-8 h-8 text-blue-500 mb-4 mx-auto" />
                                             <p className="mb-6 italic text-center" style={{ color: "var(--text-color)" }}>
-                                                &quot;{testimonial.content}&quot;
+                                                &quot;{testimonial.bio}&quot;
                                             </p>
                                             <div className="flex items-center justify-center space-x-4 mb-2" style={{ color: "var(--text-color)" }}>
                                                 <div>

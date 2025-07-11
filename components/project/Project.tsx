@@ -145,7 +145,7 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.slice(0,3).map((project, index) => (
             <div
-              key={project.id}
+              key={index}
               className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 translate-y-0 opacity-100`}
               style={{ backgroundColor: "var(--card-bg)" }}
             >

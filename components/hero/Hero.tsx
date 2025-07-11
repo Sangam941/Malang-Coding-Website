@@ -48,7 +48,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1
-                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-500 delay-200 ${
+                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-200 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
 
@@ -61,7 +61,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
               </h1>
 
               <p
-                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-500 delay-400 ${
+                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-500 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
                 style={{color:"var(--text-color)"}}

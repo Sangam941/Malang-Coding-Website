@@ -128,10 +128,10 @@ const Footer = () => {
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group" style={{color:"var(--text-color)"}}
+                      className="text-gray-300 hover:text-white transition-colors flex items-center group" style={{color:"var(--text-color)"}}
                     >
-                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">{link.name}</span>
+                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all " />
+                      <span className="group-hover:translate-x-1 transition-transform ">{link.name}</span>
                     </button>
                   </li>
                 ))}
@@ -146,10 +146,10 @@ const Footer = () => {
                   <li key={service.name}>
                     <button
                       onClick={() => scrollToSection(service.href)}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group" style={{color:"var(--text-color)"}}
+                      className="text-gray-300 hover:text-white transition-colors flex items-center group" style={{color:"var(--text-color)"}}
                     >
-                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                      <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all" />
+                      <span className="group-hover:translate-x-1 transition-transform ">
                         {service.name}
                       </span>
                     </button>

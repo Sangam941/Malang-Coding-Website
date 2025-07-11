@@ -349,7 +349,7 @@ const AboutSection = ({teamMembers, timeline}:any) => {
                       </div>
                     </div>
                     <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
-                      <LazyIcon iconName={item.icon} className="w-6 h-6 rounded-full text-white" />
+                      <LazyIcon iconName={item.icon} className="w-8 h-8 rounded-full text-white" />
                     </div>
                     <div className="w-1/2"></div>
                   </div>

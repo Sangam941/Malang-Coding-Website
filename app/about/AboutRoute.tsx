@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
 import {
     Users,
@@ -284,7 +285,7 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                                             </div>
                                         </div>
                                         <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
-                                            <item.icon className="w-6 h-6 text-white" />
+                                            <LazyIcon iconName={item.icon} className="w-6 h-6 text-white" />
                                         </div>
                                         <div className="w-1/2"></div>
                                     </div>

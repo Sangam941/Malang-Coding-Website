@@ -444,12 +444,13 @@ const AboutSection = ({teamMembers, timeline}:any) => {
                 pauseOnFocus={false}
                 swipeToSlide={true}
                 draggable={true}
+
               >
                 {teamMembers.map((testimonial:any, i:any) => (
                   <div key={testimonial.name + i} className="px-5 py-10 testimonial-slide">
-                    <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl transition-all duration-300 h-full flex flex-col justify-between">
+                    <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border-[1px] rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--team-card-bg)", }}>
                       {/* Image at the top, centered, rounded, even larger size */}
-                      <div className="flex justify-center mb-5">
+                      <div className="flex justify-center mb-5" >
                         <Image
                           src={testimonial.image || "/placeholder.svg"}
                           alt={testimonial.name}

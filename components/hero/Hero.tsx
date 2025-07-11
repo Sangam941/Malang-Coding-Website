@@ -84,7 +84,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
                 </span>
               </button>
 
-              <button className="group flex items-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105">
+              <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105">
                 <Play className="w-5 h-5" />
                 <span>View Portfolio</span>
               </button>

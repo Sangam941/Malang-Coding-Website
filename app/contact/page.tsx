@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import { Mail, Phone, MapPin, Send, CheckCircle, User, Building } from "lucide-react"
 
 const Contact = () => {
-  const [isVisible, setIsVisible] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,22 +15,21 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //       }
+  //     },
+  //     { threshold: 0.1 },
+  //   )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current)
+  //   }
 
-    return () => observer.disconnect()
-  }, [])
+  //   return () => observer.disconnect()
+  // }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -84,21 +82,19 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
           >
             <Phone className="w-4 h-4 text-blue-500" />
             <span className="" style={{ color: "var(--text-color)" }}>Contact</span>
           </div>
           <h2
-            className={`text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
             style={{ color: "var(--text-color)" }}>
             Get In{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
             style={{ color: "var(--text-color)" }}>
             Ready to start your project? Let&apos;s discuss how we can help bring your ideas to life.
           </p>
@@ -107,8 +103,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div
-            className={`space-y-8 transition-all duration-1000 delay-400 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-              }`}
+            className={`space-y-8 transition-all duration-1000 delay-400 translate-x-0 opacity-100`}
           >
             <div>
               <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Contact Information</h3>
@@ -153,8 +148,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div
-            className={`transition-all duration-1000 delay-600 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-              }`}
+            className={`transition-all duration-1000 delay-600 translate-x-0 opacity-100`}
           >
             <div className="rounded-xl p-8 shadow-lg" style={{ backgroundColor: "var(--card-bg)" }}>
               <h3 className="text-2xl font-bold mb-6" style={{ color: "var(--text-color)" }}>Send us a message</h3>

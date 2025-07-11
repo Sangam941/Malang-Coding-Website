@@ -254,7 +254,7 @@ const AboutSection = () => {
                         </div>
 
                         <h2
-                            className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
+                            className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-200 translate-y-0 opacity-100`}
                             style={{ color: "var(--text-color)" }}>
                             Crafting Digital{" "}
                             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -263,7 +263,7 @@ const AboutSection = () => {
                         </h2>
 
                         <p
-                            className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-400 translate-y-0 opacity-100`}
+                            className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-200 translate-y-0 opacity-100`}
                             style={{ color: "var(--text-color)" }}>
                             We are a passionate team of developers, designers, and innovators dedicated to transforming your ideas into
                             powerful digital solutions that drive business growth and user engagement.

@@ -103,19 +103,19 @@ const ProjectsSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
+            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-200 translate-y-0 opacity-100`}
           >
             <FolderKanban className="w-4 h-4 text-blue-500" />
             <span className="" style={{ color: "var(--text-color)" }}>Our Projects</span>
           </div>
           <h2
-            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
+            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-200 translate-y-0 opacity-100`}
           style={{ color: "var(--text-color)" }}>
             Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-200  translate-y-0 opacity-100`}
            style={{ color: "var(--text-color)" }}>
             Explore our portfolio of successful projects that have helped businesses achieve their digital goals.
           </p>

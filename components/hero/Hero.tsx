@@ -29,7 +29,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
   return (
     <section
       id="home"
-      className="relative py-4 sm:py-6 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{backgroundColor:"var(--bg-color)"}}>
+      className="relative px-3 py-4 sm:px-5 sm:py-6 md:px-7 lg:px-9 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{backgroundColor:"var(--bg-color)"}}>
       {/* Background Pattern */}
 
       <div className="container mx-auto">

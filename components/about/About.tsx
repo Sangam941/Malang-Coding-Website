@@ -448,7 +448,7 @@ const AboutSection = ({teamMembers, timeline}:any) => {
               >
                 {teamMembers.map((testimonial:any, i:any) => (
                   <div key={testimonial.name + i} className="px-5 py-10 testimonial-slide">
-                    <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border-[1px] rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--team-card-bg)", }}>
+                    <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--team-card-bg)", border:"1px solid var(--card-border)"}}>
                       {/* Image at the top, centered, rounded, even larger size */}
                       <div className="flex justify-center mb-5" >
                         <Image

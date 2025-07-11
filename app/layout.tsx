@@ -23,6 +23,22 @@ export default function RootLayout({
         className={`${inter.className} `}
         style={{ backgroundColor: "var(--bg-color)" }}
       >
+        {/* Global HTML loader */}
+        <div
+          id="global-loader"
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <span>Loading...</span>
+        </div>
+
         <Suspense fallback={<LoadingPage />}>
           <Navbar />
           <main className="px-3 sm:px-3 md:px-4 lg:px-6 xl:px-8">
@@ -30,6 +46,18 @@ export default function RootLayout({
           </main>
           <Footer />
         </Suspense>
+
+        {/* Script to hide loader after JS loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', function() {
+                var loader = document.getElementById('global-loader');
+                if (loader) loader.style.display = 'none';
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

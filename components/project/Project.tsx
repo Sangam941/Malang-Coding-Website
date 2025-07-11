@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useRef } from "react"
-import dynamic from "next/dynamic"
 // Dynamically import react-slick to avoid SSR issues
+import dynamic from "next/dynamic"
 const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban, ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -144,8 +144,8 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* Projects Carousel Slider */}
-        <div className="mb-12">
+        {/* Projects Carousel Slider for mobile view */}
+        <div className="mb-12 md:hidden">
           <Slider
             dots={true}
             infinite={true}
@@ -226,6 +226,68 @@ const ProjectsSection = () => {
             ))}
           </Slider>
         </div>
+
+        {/* Projects Grid for laptop view*/}
+                <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filteredProjects.slice(0,3).map((project, index) => (
+                    <div
+                      key={project.id}
+                      className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
+                      style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
+                    >
+                      <div className="relative group">
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className="w-full h-48 object-cover"
+                          width={500}
+                          height={300}
+                        />
+                        <div className="absolute inset-0 bg-black/50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                          <a
+                            href={project.liveUrl}
+                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors"
+                          >
+                            <ExternalLink className="w-5 h-5" />
+                          </a>
+                          <a
+                            href={project.githubUrl}
+                            className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors"
+                          >
+                            <Github className="w-5 h-5" />
+                          </a>
+                        </div>
+                      </div>
+        
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full font-medium uppercase">
+                            {project.category}
+                          </span>
+                          <div className="flex items-center space-x-1">
+                            {project.category === "web" && <Globe className="w-4 h-4 "  style={{ color: "var(--text-color)" }} />}
+                            {project.category === "mobile" && <Smartphone className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                            {project.category === "ecommerce" && <ShoppingCart className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                          </div>
+                        </div>
+        
+                        <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
+                        <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
+        
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
         <div
                     className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
                 >

@@ -260,7 +260,7 @@ const Service = () => {
                     slidesToScroll={1}
                     arrows={true}
                     autoplay={true}
-                    autoplaySpeed={4000}
+                    autoplaySpeed={3000}
                     responsive={[
                       {
                         breakpoint: 1024,
@@ -273,7 +273,7 @@ const Service = () => {
                     ]}
                   >
                     {services.map((service, index) => (
-                      <div key={service.title} className="px-2">
+                      <div key={index} className="px-2">
                         <div
                           className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                           style={{ animationDelay: `${index * 150}ms` }}

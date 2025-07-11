@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 import LoadingPage from "@/components/Loading";
 import { Suspense } from "react";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +27,7 @@ export default function RootLayout({
       >
         <Suspense fallback={<LoadingPage />}>
           <Navbar />
-          <main className="px-3 sm:px-3 md:px-4 lg:px-6 xl:px-8">
+          <main className="sm:px-3 md:px-4 lg:px-6 xl:px-8">
             {children}
           </main>
           <Footer />

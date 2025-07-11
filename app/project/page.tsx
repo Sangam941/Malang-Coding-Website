@@ -140,6 +140,89 @@ const ProjectsSection = () => {
           ))}
         </div>
 
+{/* Projects Carousel Slider for mobile view */}
+        <div className="mb-12 md:hidden">
+          <Slider
+            dots={true}
+            infinite={true}
+            speed={500}
+            slidesToShow={3}
+            slidesToScroll={1}
+            arrows={true}
+            autoplay={true}
+            autoplaySpeed={4000}
+            responsive={[
+              {
+                breakpoint: 1024,
+                settings: { slidesToShow: 2 }
+              },
+              {
+                breakpoint: 640,
+                settings: { slidesToShow: 1 }
+              }
+            ]}
+          >
+            {filteredProjects.map((project, index) => (
+              <div key={index} className="px-2">
+                <div
+                  className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
+                  style={{ backgroundColor: "var(--card-bg)" }}
+                >
+                  <div className="relative group">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                      width={500}
+                      height={300}
+                    />
+                    <div className="absolute inset-0 bg-black/50 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                      <a
+                        href={project.liveUrl}
+                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors"
+                        target="_blank" rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-gray-100 transition-colors"
+                        target="_blank" rel="noopener noreferrer"
+                      >
+                        <Github className="w-5 h-5" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full font-medium uppercase">
+                        {project.category}
+                      </span>
+                      <div className="flex items-center space-x-1">
+                        {project.category === "web" && <Globe className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                        {project.category === "mobile" && <Smartphone className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                        {project.category === "ecommerce" && <ShoppingCart className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
+                    <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (

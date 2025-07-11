@@ -109,13 +109,13 @@ const ProjectsSection = () => {
             <span className="" style={{ color: "var(--text-color)" }}>Our Projects</span>
           </div>
           <h2
-            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
+            className={`text-3xl md:text-5xl font-bold mb-6 transition-all duration-200 translate-y-0 opacity-100`}
           style={{ color: "var(--text-color)" }}>
             Our{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 translate-y-0 opacity-100`}
+            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-200 delay-200 translate-y-0 opacity-100`}
            style={{ color: "var(--text-color)" }}>
             Explore our portfolio of successful projects that have helped businesses achieve their digital goals.
           </p>
@@ -123,7 +123,7 @@ const ProjectsSection = () => {
 
         {/* Filter Buttons */}
         <div
-          className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-1000 delay-400 translate-y-0 opacity-100`}
+          className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
         >
           {filters.map((filter) => (
             <button
@@ -144,9 +144,9 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <div
-              key={project.id}
-              className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
-              style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
+              key={index}
+              className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 translate-y-0 opacity-100`}
+              style={{ backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">
                 <Image
@@ -178,7 +178,7 @@ const ProjectsSection = () => {
                     {project.category}
                   </span>
                   <div className="flex items-center space-x-1">
-                    {project.category === "web" && <Globe className="w-4 h-4 "  style={{ color: "var(--text-color)" }} />}
+                    {project.category === "web" && <Globe className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
                     {project.category === "mobile" && <Smartphone className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
                     {project.category === "ecommerce" && <ShoppingCart className="w-4 h-4 " style={{ color: "var(--text-color)" }} />}
                   </div>

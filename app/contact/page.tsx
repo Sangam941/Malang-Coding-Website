@@ -72,7 +72,7 @@ const Contact = () => {
       title: "Visit Us",
       details: "123 Tech Street, NY 10001",
       description: "Open for meetings by appointment",
-    },
+    }, 
   ]
 
   return (

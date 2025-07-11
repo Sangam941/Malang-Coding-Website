@@ -266,11 +266,11 @@ const AboutSection = ({teamMembers, timeline}:any) => {
             {/* Left Content */}
             <div className="space-y-6">
               <h3 className="text-3xl md:text-4xl font-bold " style={{ color: "var(--text-color)" }}>Our Story</h3>
-              <p className="text-lg  leading-relaxed" style={{ color: "var(--text-color)" }}>
+              <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
                 Founded in 2019 with a mission to bridge the gap between innovative technology and real-world business
                 solutions. We&apos;ve grown from a small team of passionate developers into a full-service digital agency.
               </p>
-              <p className="text-lg  leading-relaxed" style={{ color: "var(--text-color)" }}>
+              <p className="text-lg leading-relaxed" style={{ color: "var(--text-color)" }}>
                 We believe great software is about understanding your business, users, and goals. Every project is a
                 partnership aimed at creating lasting digital success.
               </p>

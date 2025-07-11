@@ -54,7 +54,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
 
                 style={{color:"var(--text-color)"}}
               >
-                {data.name}{" "}
+                MalangCode{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Innovators
                 </span>

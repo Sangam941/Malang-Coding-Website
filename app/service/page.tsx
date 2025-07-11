@@ -259,7 +259,7 @@ const Service = () => {
         }, 3000)
 
         return () => clearInterval(interval)
-    }, [])
+    })
     return (
         <section
             ref={sectionRef}

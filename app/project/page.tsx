@@ -3,6 +3,9 @@
 import { useState, useEffect, useRef } from "react"
 import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban } from "lucide-react"
 import Image from "next/image"
+import dynamic from "next/dynamic"
+// Dynamically import react-slick to avoid SSR issues
+const Slider = dynamic(() => import("react-slick"), { ssr: false })
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState("all")

@@ -94,11 +94,7 @@ const Contact = () => {
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p
-<<<<<<< HEAD
             className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-200 translate-y-0 opacity-100`}
-=======
-            className={`text-xl max-w-3xl mx-auto leading-relaxed transition-all duration-200  translate-y-0 opacity-100`}
->>>>>>> 2e5694e8747488fa36101f68024c98a944e063ca
             style={{ color: "var(--text-color)" }}>
             Ready to start your project? Let&apos;s discuss how we can help bring your ideas to life.
           </p>

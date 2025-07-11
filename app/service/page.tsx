@@ -292,7 +292,7 @@ const Service = () => {
                     </div>
 
                     <h2
-                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-300 translate-y-0 opacity-100`}
+                        className={`text-4xl md:text-6xl font-bold mb-6 transition-all duration-200 translate-y-0 opacity-100`}
                     style={{color:"var(--text-color)"}}>
                         Transforming Ideas Into{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -301,7 +301,7 @@ const Service = () => {
                     </h2>
 
                     <p
-                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-300 translate-y-0 opacity-100`}
+                        className={`text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-200 translate-y-0 opacity-100`}
                     style={{color:"var(--text-color)"}}>
                         From concept to deployment, we provide comprehensive digital solutions that drive growth, enhance user
                         experience, and deliver measurable results for your business.

@@ -278,14 +278,14 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                                         style={{ animationDelay: `${index * 200}ms` }}
                                     >
                                         <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                                            <div className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
+                                            <div className="flex flex-col items-center justify-center group p-4 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
                                                 <div className="max-md:text-xl text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">{item.year}</div>
                                                 <h4 className="max-md:text-lg text-xl font-semibold mb-2" style={{ color: "var(--text-color)" }}>{item.title}</h4>
                                                 <p className="max-md:text-sm" style={{ color: "var(--text-color)" }}>{item.description}</p>
                                             </div>
                                         </div>
-                                        <div className="relative z-10 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
-                                            <LazyIcon iconName={item.icon} className="w-8 h-8 rounded-full text-white" />
+                                        <div className="relative z-10 w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto">
+                                            <LazyIcon iconName={item.icon} className="w-6 h-6 text-white" />
                                         </div>
                                         <div className="w-1/2"></div>
                                     </div>

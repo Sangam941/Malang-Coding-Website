@@ -7,8 +7,14 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import { ExternalLink, Github, Globe, Smartphone, ShoppingCart, FolderKanban, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import React from "react"
 
-const ProjectsSection = () => {
+type ProjectProps = {
+  data: any;
+  category: any;
+}
+
+const ProjectsSection = ({data, category}: ProjectProps) => {
   const [activeFilter, setActiveFilter] = useState("all")
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -99,9 +105,13 @@ const ProjectsSection = () => {
     },
   ]
 
-  const filteredProjects =
-    activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
-
+  const filteredProjects = React.useMemo(() => {
+    if (!data) return []; // fallback if data is undefined
+    return activeFilter === "all"
+      ? data
+      : data.filter((project: { category: string }) => project.category === activeFilter);
+  }, [data, activeFilter]);
+  
   return (
     <section ref={sectionRef} id="project" className="py-15 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
       <div className="container mx-auto px-6">
@@ -166,7 +176,7 @@ const ProjectsSection = () => {
               }
             ]}
           >
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project:any, index:any) => (
               <div key={index} className="px-2">
                 <div
                   className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
@@ -211,7 +221,7 @@ const ProjectsSection = () => {
                     <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
                     <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
+                      {project.technologies.map((tech:any) => (
                         <span
                           key={tech}
                           className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
@@ -229,7 +239,7 @@ const ProjectsSection = () => {
 
         {/* Projects Grid for laptop view*/}
                 <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredProjects.slice(0,3).map((project, index) => (
+                  {filteredProjects.slice(0,3).map((project:any, index:any) => (
                     <div
                       key={index}
                       className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 translate-y-0 opacity-100`}
@@ -275,7 +285,7 @@ const ProjectsSection = () => {
                         <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
         
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies.map((tech) => (
+                          {project.technologies.map((tech:any) => (
                             <span
                               key={tech}
                               className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"

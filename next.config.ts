@@ -7,6 +7,11 @@ const config: NextConfig = {
         protocol: 'https',
         hostname: 'malangcode.pythonanywhere.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+      },
     ],
 
   },

@@ -435,7 +435,7 @@ const Service = ({ services }:any) => {
                                     <p className="mb-6" style={{ color: "var(--text-color)" }}>{pkg.description}</p>
 
                                     <div className="space-y-3 mb-8">
-                                        {pkg.features.map((feature, idx) => (
+                                        {pkg.features.map((feature:any, idx:any) => (
                                             <div key={idx} className="flex items-center space-x-3">
                                                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                                                 <span style={{ color: "var(--text-color)" }}>{feature}</span>

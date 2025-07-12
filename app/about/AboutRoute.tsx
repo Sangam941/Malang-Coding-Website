@@ -84,20 +84,6 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                                 We believe great software is about understanding your business, users, and goals. Every project is a
                                 partnership aimed at creating lasting digital success.
                             </p>
-                            <div className="flex items-center space-x-8">
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">200+</div>
-                                    <div className="text-sm " style={{ color: "var(--text-color)" }}>Projects</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
-                                    <div className="text-sm " style={{ color: "var(--text-color)" }}>Clients</div>
-                                </div>
-                                <div className="text-center">
-                                    <div className="text-3xl font-bold text-green-600 dark:text-green-400">99%</div>
-                                    <div className="text-sm " style={{ color: "var(--text-color)" }}>Success Rate</div>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Right Content */}

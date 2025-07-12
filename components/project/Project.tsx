@@ -147,7 +147,7 @@ const ProjectsSection = () => {
             <div
               key={project.id}
               className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
-              style={{ transitionDelay: `${index * 150}ms`, backgroundColor: "var(--card-bg)" }}
+              style={{ backgroundColor: "var(--card-bg)" }}
             >
               <div className="relative group">
                 <Image

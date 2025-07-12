@@ -8,7 +8,11 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import { Cog, ArrowRight, CheckCircle} from "lucide-react"
 import Link from "next/link"
 
-const Service = ({ services }:any) => {
+type ServiceProps = {
+  services:any
+}
+
+const Service = ({ services }:ServiceProps) => {
     const sectionRef = useRef<HTMLElement>(null)
 
 

@@ -6,7 +6,11 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import LazyIcon from "@/components/LazyIcon"
 import { Code, Palette, Cog, Users, ArrowRight, CheckCircle, Clock, Target, Lightbulb, Rocket, HeadphonesIcon, Play, Award, TrendingUp} from "lucide-react"
 
-const Service = ({ services }:any) => {
+type ServiceProps = {
+  services:any
+}
+
+const Service = ({ services }:ServiceProps) => {
     const [activeProcess, setActiveProcess] = useState(0)
     const [activeProcessMobile, setActiveProcessMobile] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)

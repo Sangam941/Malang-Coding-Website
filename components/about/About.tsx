@@ -8,8 +8,14 @@ import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
 import { Users, Quote} from "lucide-react"
 
+type AboutProps = {
+  teamMembers: any; // Define the type of data if known
+  timeline: any;
+  technologies: any;
+  features: any;
+}
 
-const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
+const AboutSection = ({teamMembers, timeline, technologies, features}:AboutProps) => {
 
   // Removed unused testimonialIndex and setTestimonialIndex (now handled by react-slick)
   const sectionRef = useRef<HTMLElement>(null)

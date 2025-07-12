@@ -14,7 +14,7 @@ type ProjectProps = {
   category: any;
 }
 
-const ProjectsSection = ({data, category}: ProjectProps) => {
+const ProjectsSection = ({ data, category }: ProjectProps) => {
   const [activeFilter, setActiveFilter] = useState("all")
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -22,7 +22,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
   //   const observer = new IntersectionObserver(
   //     ([entry]) => {
   //       if (entry.isIntersecting) {
-          
+
   //       }
   //     },
   //     { threshold: 0.1 },
@@ -42,47 +42,8 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
   //   { id: "ecommerce", name: "E-commerce" },
   // ]
 
-  // const projects = [
-  //   {
-  //     id: 1,
-  //     title: "EcoShop E-commerce Platform",
-  //     category: "ecommerce",
-  //     description: "Modern e-commerce platform with AI-powered recommendations and sustainable product focus.",
-  //     image: "/image/projects/p1.webp",
-  //     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "HealthCare Management System",
-  //     category: "web",
-  //     description: "Comprehensive healthcare management system for hospitals with patient portal integration.",
-  //     image: "/image/projects/p2.jpeg",
-  //     technologies: ["Next.js", "PostgreSQL", "AWS", "Socket.io"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "FitTracker Mobile App",
-  //     category: "mobile",
-  //     description: "Cross-platform fitness tracking app with social features and AI workout plans.",
-  //     image: "/image/projects/p1.webp",
-  //     technologies: ["React Native", "Firebase", "Redux"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "Learning Management Platform",
-  //     category: "web",
-  //     description: "Modern LMS with interactive courses, live streaming, and progress analytics.",
-  //     image: "/image/projects/p2.jpeg",
-  //     technologies: ["Vue.js", "Laravel", "MySQL"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
+  // const data = [
+
   //   {
   //     id: 5,
   //     title: "Restaurant Delivery App",
@@ -109,9 +70,9 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
     if (!data) return []; // fallback if data is undefined
     return activeFilter === "all"
       ? data
-      : data.filter((project:any) => project.category === activeFilter);
+      : data.filter((project: any) => project.category === activeFilter);
   }, [data, activeFilter]);
-  
+
   return (
     <section ref={sectionRef} id="project" className="py-15 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
       <div className="container mx-auto px-6">
@@ -140,13 +101,13 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
         <div
           className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
         >
-          {category.map((filter:any,index:any) => (
+          {category.map((filter: any, index: any) => (
             <button
               key={index}
               onClick={() => setActiveFilter(filter.id)}
               className={`cursor-pointer px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === filter.id
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                  : "bg-gray-100  text-gray-700  hover:bg-gray-200"
+                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                : "bg-gray-100  text-gray-700  hover:bg-gray-200"
                 }`}
             >
               {filter.name}
@@ -156,29 +117,35 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
 
         {/* Projects Carousel Slider for mobile view */}
         <div className="mb-12">
-          <Slider
-            dots={true}
-            infinite={true}
-            speed={500}
-            slidesToShow={3}
-            slidesToScroll={1}
-            arrows={true}
-            autoplay={true}
-            autoplaySpeed={4000}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: { slidesToShow: 2 }
-              },
-              {
-                breakpoint: 640,
-                settings: { slidesToShow: 1 }
-              }
-            ]}
-          >
-            {filteredProjects.map((project:any, index:any) => (
-              <div key={index} className="px-2">
-                <div
+          {filteredProjects && filteredProjects.length > 0 ? (
+            <Slider
+              dots={true}
+              infinite={filteredProjects.length > 3}
+              speed={500}
+              slidesToShow={3}
+              slidesToScroll={1}
+              arrows={true}
+              autoplay={true}
+              autoplaySpeed={4000}
+              responsive={[
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: Math.min(3, filteredProjects.length),
+                    infinite: filteredProjects.length > 3,
+                  }
+                },
+                {
+                  breakpoint: 640,
+                  settings: {
+                    slidesToShow: 1,
+                    infinite: filteredProjects.length > 1,
+                  }
+                }
+              ]}
+            >
+            {filteredProjects.map((project: any, index: any) => (
+              <div key={index} className="px-2">         <div
                   className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
                   style={{ backgroundColor: "var(--card-bg)" }}
                 >
@@ -221,7 +188,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
                     <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
                     <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech:any) => (
+                      {project.technologies.map((tech: any) => (
                         <span
                           key={tech}
                           className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
@@ -234,11 +201,14 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
                 </div>
               </div>
             ))}
-          </Slider>
-        </div>
+        </Slider>
+        ) : (
+        <div className="text-center text-gray-500">No projects found.</div>
+          )}
+      </div>
 
-        {/* Projects Grid for laptop view*/}
-                {/* <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Projects Grid for laptop view*/}
+      {/* <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {filteredProjects.slice(0,3).map((project:any, index:any) => (
                     <div
                       key={index}
@@ -298,30 +268,30 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
                     </div>
                   ))}
                 </div> */}
-        <div
-                    className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
-                >
-                    <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-black/10"></div>
-                        <div className="relative z-10">
-                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Want to see more projects?</h3>
-                            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                                Please click on the button below, you will be redirected to our project page.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Link href="/project" className="cursor-pointer group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-                                    <span className="flex items-center justify-center space-x-2">
-                                        <span>View More Project</span>
-                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
+      <div
+        className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
+      >
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">Want to see more projects?</h3>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Please click on the button below, you will be redirected to our project page.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/project" className="cursor-pointer group bg-white text-blue-600 font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                <span className="flex items-center justify-center space-x-2">
+                  <span>View More Project</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+    </div>
+    </section >
   )
 }
 

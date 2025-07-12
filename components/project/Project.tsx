@@ -11,7 +11,7 @@ import React from "react"
 
 type ProjectProps = {
   data: any;
-  category: string;
+  category: any;
 }
 
 const ProjectsSection = ({data, category}: ProjectProps) => {

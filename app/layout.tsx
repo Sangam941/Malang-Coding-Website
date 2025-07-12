@@ -1,4 +1,4 @@
-import Footer from "@/components/footer/Footer";
+import FooterApi from "@/components/footer/FooterApi";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
@@ -30,7 +30,7 @@ export default function RootLayout({
           <main className="sm:px-3 md:px-4 lg:px-6 xl:px-8">
             {children}
           </main>
-          <Footer />
+          <FooterApi />
         </Suspense>
       </body>
     </html>

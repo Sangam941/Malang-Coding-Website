@@ -7,10 +7,10 @@ import { Code, Mail, Phone, MapPin, ArrowRight, ExternalLink} from "lucide-react
 
 
 type FooterProps = {
-  socialLins: any; // Define the type of data if known
+  socialLinks: any; // Define the type of data if known
 }
 
-const Footer = ({socialLins}:FooterProps) => {
+const Footer = ({socialLinks}:FooterProps) => {
 
   // const [email, setEmail] = useState("")
   // const [isSubscribing, setIsSubscribing] = useState(false)
@@ -157,7 +157,7 @@ const Footer = ({socialLins}:FooterProps) => {
               <div>
                 <h5 className="text-sm font-semibold mb-4 " style={{color:"var(--text-color)"}}>Follow Us</h5>
                 <div className="flex space-x-4">
-                  {socialLins.map((social:any, index:any) => (
+                  {socialLinks.map((social:any, index:any) => (
                     <a
                       key={index}
                       href={social.href}

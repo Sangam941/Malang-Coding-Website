@@ -9,7 +9,7 @@ const FooterApi = async () => {
 
         const data = res1.data;
 
-        return <Footer socialLins={data} />;
+        return <Footer socialLinks={data} />;
     } catch (error) {
         console.error("Error fetching project data:", error);
         return <div>Failed to load projects.</div>;

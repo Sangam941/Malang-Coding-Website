@@ -1,55 +1,19 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useRef } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
-import { Users, Heart, Star, CheckCircle, Quote, Calendar} from "lucide-react"
+import { Users, Quote} from "lucide-react"
 
 
 const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
-  const [counters, setCounters] = useState({
-    projects: 0,
-    clients: 0,
-    experience: 0,
-    satisfaction: 0,
-  })
+
   // Removed unused testimonialIndex and setTestimonialIndex (now handled by react-slick)
   const sectionRef = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          animateCounters()
-        }
-      },
-      { threshold: 0.1 },
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  const animateCounters = () => {
-    const targets = { projects: 500, clients: 150, experience: 5, satisfaction: 99 }
-    const duration = 2000
-    const steps = 60
-    Object.keys(targets).forEach((key) => {
-      const target = targets[key as keyof typeof targets]
-      const increment = target / steps
-      let current = 0
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= target) {
-          current = target
-          clearInterval(timer)
-        }
-        setCounters((prev) => ({ ...prev, [key]: Math.floor(current) }))
-      }, duration / steps)
-    })
-  }
 
   return (
     <>

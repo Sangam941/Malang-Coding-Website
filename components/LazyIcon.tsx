@@ -26,7 +26,7 @@ const LazyIcon = ({ iconName, className, ...rest }: LazyIconProps) => {
     Bs: () => import("react-icons/bs"),
     Md: () => import("react-icons/md"),
     Io: () => import("react-icons/io"),
-    Tb: () => import("react-icons/tb"),
+    Tb: () => import("react-icons/tb"), 
     Hi: () => import("react-icons/hi"),
     Lu: () => import("lucide-react"),
   };

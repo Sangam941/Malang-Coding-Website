@@ -18,54 +18,6 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
   const [activeFilter, setActiveFilter] = useState("all")
   const sectionRef = useRef<HTMLElement>(null)
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-
-  //       }
-  //     },
-  //     { threshold: 0.1 },
-  //   )
-
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current)
-  //   }
-
-  //   return () => observer.disconnect()
-  // }, [])
-
-  // const filters = [
-  //   { id: "all", name: "All Projects" },
-  //   { id: "web", name: "Web Apps" },
-  //   { id: "mobile", name: "Mobile" },
-  //   { id: "ecommerce", name: "E-commerce" },
-  // ]
-
-  // const data = [
-
-  //   {
-  //     id: 5,
-  //     title: "Restaurant Delivery App",
-  //     category: "mobile",
-  //     description: "Multi-vendor food delivery platform with real-time tracking and payments.",
-  //     image: "/image/projects/p1.webp",
-  //     technologies: ["Flutter", "Node.js", "Redis"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Fashion Store Website",
-  //     category: "ecommerce",
-  //     description: "Luxury fashion e-commerce site with virtual try-on and AR features.",
-  //     image: "/image/projects/p2.jpeg",
-  //     technologies: ["React", "Shopify", "Three.js"],
-  //     liveUrl: "#",
-  //     githubUrl: "#",
-  //   },
-  // ]
-
   const filteredProjects = React.useMemo(() => {
     if (!data) return []; // fallback if data is undefined
     return activeFilter === "all"
@@ -101,7 +53,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
         <div
           className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
         >
-          {category.map((filter: any, index: any) => (
+          {category.slice().reverse().map((filter: any, index: any) => (
             <button
               key={index}
               onClick={() => setActiveFilter(filter.id)}

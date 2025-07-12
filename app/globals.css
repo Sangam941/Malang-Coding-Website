@@ -37,6 +37,21 @@
   --input-color: #37405b;
 }
 
+/* 
+.project-slider .slick-prev,
+.project-slider .slick-next {
+  background-color: black;
+  color: #000000;
+  z-index: 10;
+}
+
+.project-slider .slick-prev {
+  padding-left: 8px;
+}
+
+.project-slider .slick-next {
+  padding-right: 27px;
+} */
 
 html {
   transition: background-color 0.4s ease, color 0.4s ease;

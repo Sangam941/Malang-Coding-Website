@@ -259,7 +259,7 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
 
                     {/* Timeline */}
                     <div
-                        className={`mb-20 transition-all duration-1000 delay-1400 translate-y-0 opacity-100`}
+                        className={`max-sm:hidden mb-20 transition-all duration-1000 delay-1400 translate-y-0 opacity-100`}
                     >
                         <div className="text-center mb-12">
                             <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "var(--text-color)" }}>Our Journey</h3>

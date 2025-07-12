@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import LazyIcon from "@/components/LazyIcon"
 // import { useState } from "react"
 import { Code, Mail, Phone, MapPin, ArrowRight, ExternalLink} from "lucide-react"
 
@@ -164,7 +164,7 @@ const Footer = ({socialLinks}:FooterProps) => {
                       className={`w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white ${social.color} transition-all duration-300 transform hover:scale-110 hover:bg-none`}
                       aria-label={social.name}
                     >
-                      <social.icon className="w-5 h-5" />
+                      <LazyIcon iconName={social.icon} className="w-5 h-5 text-white" />
                     </a>
                   ))}
                 </div>

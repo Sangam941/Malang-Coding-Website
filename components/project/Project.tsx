@@ -11,7 +11,7 @@ import React from "react"
 
 type ProjectProps = {
   data: any;
-  category: any;
+  category: string;
 }
 
 const ProjectsSection = ({data, category}: ProjectProps) => {
@@ -35,75 +35,75 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
   //   return () => observer.disconnect()
   // }, [])
 
-  const filters = [
-    { id: "all", name: "All Projects" },
-    { id: "web", name: "Web Apps" },
-    { id: "mobile", name: "Mobile" },
-    { id: "ecommerce", name: "E-commerce" },
-  ]
+  // const filters = [
+  //   { id: "all", name: "All Projects" },
+  //   { id: "web", name: "Web Apps" },
+  //   { id: "mobile", name: "Mobile" },
+  //   { id: "ecommerce", name: "E-commerce" },
+  // ]
 
-  const projects = [
-    {
-      id: 1,
-      title: "EcoShop E-commerce Platform",
-      category: "ecommerce",
-      description: "Modern e-commerce platform with AI-powered recommendations and sustainable product focus.",
-      image: "/image/projects/p1.webp",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 2,
-      title: "HealthCare Management System",
-      category: "web",
-      description: "Comprehensive healthcare management system for hospitals with patient portal integration.",
-      image: "/image/projects/p2.jpeg",
-      technologies: ["Next.js", "PostgreSQL", "AWS", "Socket.io"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 3,
-      title: "FitTracker Mobile App",
-      category: "mobile",
-      description: "Cross-platform fitness tracking app with social features and AI workout plans.",
-      image: "/image/projects/p1.webp",
-      technologies: ["React Native", "Firebase", "Redux"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 4,
-      title: "Learning Management Platform",
-      category: "web",
-      description: "Modern LMS with interactive courses, live streaming, and progress analytics.",
-      image: "/image/projects/p2.jpeg",
-      technologies: ["Vue.js", "Laravel", "MySQL"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 5,
-      title: "Restaurant Delivery App",
-      category: "mobile",
-      description: "Multi-vendor food delivery platform with real-time tracking and payments.",
-      image: "/image/projects/p1.webp",
-      technologies: ["Flutter", "Node.js", "Redis"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 6,
-      title: "Fashion Store Website",
-      category: "ecommerce",
-      description: "Luxury fashion e-commerce site with virtual try-on and AR features.",
-      image: "/image/projects/p2.jpeg",
-      technologies: ["React", "Shopify", "Three.js"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ]
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "EcoShop E-commerce Platform",
+  //     category: "ecommerce",
+  //     description: "Modern e-commerce platform with AI-powered recommendations and sustainable product focus.",
+  //     image: "/image/projects/p1.webp",
+  //     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "HealthCare Management System",
+  //     category: "web",
+  //     description: "Comprehensive healthcare management system for hospitals with patient portal integration.",
+  //     image: "/image/projects/p2.jpeg",
+  //     technologies: ["Next.js", "PostgreSQL", "AWS", "Socket.io"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "FitTracker Mobile App",
+  //     category: "mobile",
+  //     description: "Cross-platform fitness tracking app with social features and AI workout plans.",
+  //     image: "/image/projects/p1.webp",
+  //     technologies: ["React Native", "Firebase", "Redux"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Learning Management Platform",
+  //     category: "web",
+  //     description: "Modern LMS with interactive courses, live streaming, and progress analytics.",
+  //     image: "/image/projects/p2.jpeg",
+  //     technologies: ["Vue.js", "Laravel", "MySQL"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Restaurant Delivery App",
+  //     category: "mobile",
+  //     description: "Multi-vendor food delivery platform with real-time tracking and payments.",
+  //     image: "/image/projects/p1.webp",
+  //     technologies: ["Flutter", "Node.js", "Redis"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Fashion Store Website",
+  //     category: "ecommerce",
+  //     description: "Luxury fashion e-commerce site with virtual try-on and AR features.",
+  //     image: "/image/projects/p2.jpeg",
+  //     technologies: ["React", "Shopify", "Three.js"],
+  //     liveUrl: "#",
+  //     githubUrl: "#",
+  //   },
+  // ]
 
   const filteredProjects = React.useMemo(() => {
     if (!data) return []; // fallback if data is undefined
@@ -140,9 +140,9 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
         <div
           className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
         >
-          {filters.map((filter) => (
+          {category.map((filter:any,index:any) => (
             <button
-              key={filter.id}
+              key={index}
               onClick={() => setActiveFilter(filter.id)}
               className={`cursor-pointer px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeFilter === filter.id
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"

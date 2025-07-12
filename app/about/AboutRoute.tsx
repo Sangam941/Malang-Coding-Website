@@ -1,21 +1,16 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
-import { Users, Heart, Star, CheckCircle, Quote, Calendar} from "lucide-react"
+import { Users, Quote } from "lucide-react"
 
 
 const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => {
-    const [counters, setCounters] = useState({
-        projects: 0,
-        clients: 0,
-        experience: 0,
-        satisfaction: 0,
-    })
+   
     // Removed unused testimonialIndex and setTestimonialIndex (now handled by react-slick)
     const sectionRef = useRef<HTMLElement>(null)
 

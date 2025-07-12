@@ -3,34 +3,10 @@
 import type React from "react"
 import LazyIcon from "@/components/LazyIcon"
 // import { useState } from "react"
-import { Code, Mail, Phone, MapPin, ArrowRight, ExternalLink} from "lucide-react"
+import { Code, Mail, Phone, MapPin, ArrowRight, ExternalLink, Facebook, Twitter, Linkedin, Instagram, Github, } from "lucide-react"
 
 
-type FooterProps = {
-  socialLinks: any; // Define the type of data if known
-}
-
-const Footer = ({socialLinks}:FooterProps) => {
-
-  // const [email, setEmail] = useState("")
-  // const [isSubscribing, setIsSubscribing] = useState(false)
-  // const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle")
-
-  // const handleNewsletterSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   setIsSubscribing(true)
-
-  //   // Simulate newsletter subscription
-  //   setTimeout(() => {
-  //     setIsSubscribing(false)
-  //     setSubscribeStatus("success")
-  //     setEmail("")
-
-  //     setTimeout(() => {
-  //       setSubscribeStatus("idle")
-  //     }, 3000)
-  //   }, 1500)
-  // }
+const Footer = () => {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
@@ -39,6 +15,14 @@ const Footer = ({socialLinks}:FooterProps) => {
     }
   }
 
+  const socialLinks = [
+    { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-600" },
+    { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
+    { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-700" },
+    { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-500" },
+    { name: "GitHub", icon: Github, href: "#", color: "hover:text-gray-600 dark:hover:text-gray-400" },
+  ]
+  
   const navigationLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },

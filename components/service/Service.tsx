@@ -101,8 +101,8 @@ const Service = ({ services }:any) => {
                     {services.map((service:any, index:any) => (
                       <div key={index} className="px-2">
                         <div
-                          className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
-                          style={{ animationDelay: `${index * 150}ms` }}
+                          className="group relative shadow-md backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                          style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)" }}
                         >
                           {/* Gradient Background */}
                           <div
@@ -159,9 +159,9 @@ const Service = ({ services }:any) => {
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
                         {technologies.map((tech, index) => (
                             <div
-                                key={tech.name}
-                                className="group text-center p-4 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 100}ms` }}
+                                key={index}
+                                className="group text-center p-4 shadow-md backdrop-blur-sm rounded-xl transition-all duration-300 transform hover:scale-105"
+                                style={{ animationDelay: `${index * 100}ms` , backgroundColor: "var(--team-card-bg)"}}
                             >
                                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{tech.icon}</div>
                                 <div className="text-sm font-semibold mb-1"style={{color:"var(--text-color)"}}>{tech.name}</div>

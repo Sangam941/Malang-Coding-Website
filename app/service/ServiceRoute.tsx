@@ -219,8 +219,8 @@ const Service = ({ services }:any) => {
                     {services.map((service:any, index:any) => (
                         <div
                             key={service.title}
-                            className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
-                            style={{ animationDelay: `${index * 150}ms` }}
+                            className="group relative shadow-md backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                            style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)"}}
                         >
                             {/* Gradient Background */}
                             <div
@@ -411,9 +411,9 @@ const Service = ({ services }:any) => {
                         {packages.map((pkg:any, index:any) => (
                             <div
                                 key={index}
-                                className={`relative group bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
+                                className={`shadow-md relative group backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
-                                style={{ animationDelay: `${index * 200}ms` }}
+                                style={{ animationDelay: `${index * 200}ms` , backgroundColor: "var(--team-card-bg)"}}
                             >
                                 {/* Popular Badge */}
                                 {pkg.popular && (
@@ -472,8 +472,8 @@ const Service = ({ services }:any) => {
                         {technologies.map((tech:any, index:any) => (
                             <div
                                 key={index}
-                                className="group text-center p-4 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 100}ms` }}
+                                className="shadow-md group text-center p-4 backdrop-blur-sm rounded-xl transition-all duration-300 transform hover:scale-105"
+                                style={{ animationDelay: `${index * 100}ms` , backgroundColor: "var(--team-card-bg)" }}
                             >
                                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{tech.icon}</div>
                                 <div className="text-sm font-semibold mb-1" style={{ color: "var(--text-color)" }}>{tech.name}</div>
@@ -498,8 +498,8 @@ const Service = ({ services }:any) => {
                         {benefits.map((benefit:any, index:any) => (
                             <div
                                 key={index}
-                                className="group text-center p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 150}ms` }}
+                                className="shadow-md group text-center p-6 backdrop-blur-sm rounded-2xl transition-all duration-300 transform hover:scale-105"
+                                style={{ animationDelay: `${index * 150}ms`, backgroundColor: "var(--team-card-bg)" }}
                             >
                                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                                     <benefit.icon className="w-8 h-8 text-white" />

@@ -23,7 +23,7 @@ const LazyIcon = ({ iconName, className, ...rest }: LazyIconProps) => {
       
   const prefix = match ? match[1] : "";
 
-  const importPathMap: Record<string, () => Promise<any>> = {
+  const importPathMap: Record<string, () => Promise<any>> = { 
     Fa: () => import("react-icons/fa"),
     Si: () => import("react-icons/si"),
     Ai: () => import("react-icons/ai"),

@@ -293,7 +293,7 @@ const Service = ({ services }:any) => {
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform -translate-y-1/2"></div>
 
                         <div className="max-sm:hidden grid md:grid-cols-2 lg:grid-cols-6 gap-8">
-                            {processSteps.map((step, index) => (
+                            {processSteps.map((step:any, index:any) => (
                                 <div
                                     key={index}
                                     className={`relative group text-center transition-all duration-500 ${activeProcess === index ? "scale-110" : "scale-100"
@@ -408,9 +408,9 @@ const Service = ({ services }:any) => {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {packages.map((pkg, index) => (
+                        {packages.map((pkg:any, index:any) => (
                             <div
-                                key={pkg.name}
+                                key={index}
                                 className={`relative group bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
                                 style={{ animationDelay: `${index * 200}ms` }}
@@ -469,9 +469,9 @@ const Service = ({ services }:any) => {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-                        {technologies.map((tech, index) => (
+                        {technologies.map((tech:any, index:any) => (
                             <div
-                                key={tech.name}
+                                key={index}
                                 className="group text-center p-4 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >
@@ -495,9 +495,9 @@ const Service = ({ services }:any) => {
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {benefits.map((benefit, index) => (
+                        {benefits.map((benefit:any, index:any) => (
                             <div
-                                key={benefit.title}
+                                key={index}
                                 className="group text-center p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
                                 style={{ animationDelay: `${index * 150}ms` }}
                             >

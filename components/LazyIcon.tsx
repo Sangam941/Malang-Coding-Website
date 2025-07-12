@@ -16,7 +16,11 @@ interface LazyIconProps extends React.HTMLAttributes<HTMLElement> {
 const LazyIcon = ({ iconName, className, ...rest }: LazyIconProps) => {
   if (!iconName) return <FallbackIcon className={className} />;
 
-  const match = iconName.match(/^([A-Z][a-z]+)/);
+  const match =
+    typeof iconName === "string"
+      ? iconName.match(/^([A-Z][a-z]+)/)
+      : null;
+      
   const prefix = match ? match[1] : "";
 
   const importPathMap: Record<string, () => Promise<any>> = {

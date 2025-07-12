@@ -107,33 +107,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                         </p>
                     </div>
 
-                    {/* Stats Section */}
-                    <div
-                        className={`grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 transition-all duration-1000 delay-600 translate-y-0 opacity-100`}
-                    >
-                        {[
-                            { label: "Projects Completed", value: counters.projects, suffix: "+", icon: CheckCircle },
-                            { label: "Happy Clients", value: counters.clients, suffix: "+", icon: Heart },
-                            { label: "Years Experience", value: counters.experience, suffix: "+", icon: Calendar },
-                            { label: "Satisfaction Rate", value: counters.satisfaction, suffix: "%", icon: Star },
-                        ].map((stat, index) => (
-                            <div
-                                key={stat.label}
-                                className="group text-center p-6 backdrop-blur-sm rounded-2xl shadow transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 100}ms`, backgroundColor: "var(--card-bg)" }}
-                            >
-                                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                                    <stat.icon className="w-6 h-6 text-white" />
-                                </div>
-                                <div className="text-3xl md:text-4xl font-bold mb-2" style={{ color: "var(--text-color)" }}>
-                                    {stat.value}
-                                    {stat.suffix}
-                                </div>
-                                <div className="text-sm" style={{ color: "var(--text-color)" }}>{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-
+                
                     {/* Company Story */}
                     <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                         {/* Left Content */}
@@ -199,10 +173,10 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                                 className="text-center p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                                 style={{ backgroundColor: "var(--card-bg)" }}>
                                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                    <value.icon className="w-8 h-8 text-white" />
+                                    <LazyIcon iconName={value.icon} className="w-8 h-8 text-white" />
                                 </div>
                                 <h4 className="text-lg font-semibold mb-2" style={{ color: "var(--text-color)" }}>{value.title}</h4>
-                                <p className="text-gray-600  text-sm" style={{ color: "var(--text-color)" }}>{value.description}</p>
+                                <p className="text-gray-600 text-sm" style={{ color: "var(--text-color)" }}>{value.description}</p>
                             </div>
                         ))}
                     </div>
@@ -228,7 +202,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                                         style={{ animationDelay: `${index * 200}ms` }}
                                     >
                                         <div className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                                            <div className="flex flex-col items-center justify-center group p-4 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
+                                            <div className="shadow-md flex flex-col items-center justify-center group p-4 backdrop-blur-sm rounded-2xl transition-all duration-300 transform hover:scale-105" style={{ backgroundColor: "var(--card-bg)" }}>
                                                 <div className="max-md:text-xl text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">{item.year}</div>
                                                 <h4 className="max-md:text-lg text-xl font-semibold mb-2" style={{ color: "var(--text-color)" }}>{item.title}</h4>
                                                 <p className="max-md:text-sm" style={{ color: "var(--text-color)" }}>{item.description}</p>

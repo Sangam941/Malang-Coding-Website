@@ -126,9 +126,9 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                       </a>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="py-6 px-4">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full font-medium uppercase">
+                      <span className="px-3 py-1 text-xs rounded-full font-medium uppercase" style={{ backgroundColor: "var(--category-bg)", color: "var(--category-text)" }}>
                         {project.category}
                       </span>
                       <div className="flex items-center space-x-1">
@@ -139,7 +139,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                     </div>
                     <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
                     <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1">
                       {project.technologies.map((tech: any) => (
                         <span
                           key={tech}

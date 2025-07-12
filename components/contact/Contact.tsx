@@ -127,20 +127,6 @@ const Contact = () => {
                 We&apos;re here to help bring your ideas to life. Let&apos;s discuss your project and create something amazing
                 together.
               </p>
-              <div className="flex items-center space-x-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold">200+</div>
-                  <div className="text-sm opacity-90">Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">50+</div>
-                  <div className="text-sm opacity-90">Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold">5+</div>
-                  <div className="text-sm opacity-90">Years</div>
-                </div>
-              </div>
             </div>
           </div>
 

@@ -15,7 +15,7 @@ import {
   Github,
   ArrowRight,
   ExternalLink,
-} from "lucide-react"
+} from "lucide-react" 
 
 const Footer = () => {
   // const [email, setEmail] = useState("")

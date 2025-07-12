@@ -109,7 +109,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
     if (!data) return []; // fallback if data is undefined
     return activeFilter === "all"
       ? data
-      : data.filter((project: { category: string }) => project.category === activeFilter);
+      : data.filter((project:any) => project.category === activeFilter);
   }, [data, activeFilter]);
   
   return (
@@ -155,7 +155,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
         </div>
 
         {/* Projects Carousel Slider for mobile view */}
-        <div className="mb-12 md:hidden">
+        <div className="mb-12">
           <Slider
             dots={true}
             infinite={true}
@@ -238,7 +238,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
         </div>
 
         {/* Projects Grid for laptop view*/}
-                <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* <div className="max-md:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {filteredProjects.slice(0,3).map((project:any, index:any) => (
                     <div
                       key={index}
@@ -297,7 +297,7 @@ const ProjectsSection = ({data, category}: ProjectProps) => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
         <div
                     className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
                 >

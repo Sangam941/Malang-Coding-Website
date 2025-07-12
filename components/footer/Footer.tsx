@@ -3,21 +3,15 @@
 import type React from "react"
 
 // import { useState } from "react"
-import {
-  Code,
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Github,
-  ArrowRight,
-  ExternalLink,
-} from "lucide-react"
+import { Code, Mail, Phone, MapPin, ArrowRight, ExternalLink} from "lucide-react"
 
-const Footer = () => {
+
+type FooterProps = {
+  socialLins: any; // Define the type of data if known
+}
+
+const Footer = ({socialLins}:FooterProps) => {
+
   // const [email, setEmail] = useState("")
   // const [isSubscribing, setIsSubscribing] = useState(false)
   // const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle")
@@ -60,14 +54,6 @@ const Footer = () => {
     { name: "Backend Development", href: "#services" },
     { name: "Cybersecurity", href: "#services" },
     { name: "Cloud Solutions", href: "#services" },
-  ]
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#", color: "hover:text-blue-600" },
-    { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
-    { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-700" },
-    { name: "Instagram", icon: Instagram, href: "#", color: "hover:text-pink-500" },
-    { name: "GitHub", icon: Github, href: "#", color: "hover:text-gray-600 dark:hover:text-gray-400" },
   ]
 
   const legalLinks = [
@@ -171,9 +157,9 @@ const Footer = () => {
               <div>
                 <h5 className="text-sm font-semibold mb-4 " style={{color:"var(--text-color)"}}>Follow Us</h5>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
+                  {socialLins.map((social:any, index:any) => (
                     <a
-                      key={social.name}
+                      key={index}
                       href={social.href}
                       className={`w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white ${social.color} transition-all duration-300 transform hover:scale-110 hover:bg-none`}
                       aria-label={social.name}

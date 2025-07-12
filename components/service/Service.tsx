@@ -3,155 +3,13 @@
 import { useRef } from "react"
 import dynamic from "next/dynamic"
 // Dynamically import react-slick to avoid SSR issues
+import LazyIcon from "@/components/LazyIcon"
 const Slider = dynamic(() => import("react-slick"), { ssr: false })
-import {
-    Smartphone,
-    Globe,
-    Database,
-    Shield,
-    Palette,
-    Cloud,
-    Cog,
-    ArrowRight,
-    CheckCircle,
-} from "lucide-react"
+import { Cog, ArrowRight, CheckCircle} from "lucide-react"
 import Link from "next/link"
 
-const Service = () => {
-    // const [activeProcess, setActiveProcess] = useState(0)
+const Service = ({ services }:any) => {
     const sectionRef = useRef<HTMLElement>(null)
-
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         ([entry]) => {
-    //             if (entry.isIntersecting) {
-    //             }
-    //         },
-    //         { threshold: 0.1 },
-    //     )
-
-    //     if (sectionRef.current) {
-    //         observer.observe(sectionRef.current)
-    //     }
-
-    //     return () => observer.disconnect()
-    // }, [])
-
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setActiveProcess((prev) => (prev + 1) % processSteps.length)
-    //     }, 3000)
-
-    //     return () => clearInterval(interval)
-    // }, [])
-
-    const services = [
-        {
-            icon: Globe,
-            title: "Web Development",
-            description: "Custom web applications built with modern technologies like React, Next.js, and Node.js.",
-            features: ["Responsive Design", "SEO Optimized", "Fast Performance", "Secure & Scalable"],
-            price: "Starting at $2,999",
-            color: "from-blue-500 to-cyan-500",
-            deliveryTime: "4-8 weeks",
-            projects: "200+",
-        },
-        {
-            icon: Smartphone,
-            title: "Mobile Development",
-            description: "Native and cross-platform mobile applications for iOS and Android platforms.",
-            features: ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"],
-            price: "Starting at $4,999",
-            color: "from-purple-500 to-pink-500",
-            deliveryTime: "6-12 weeks",
-            projects: "150+",
-        },
-        {
-            icon: Palette,
-            title: "UI/UX Design",
-            description: "User-centered design that converts visitors into customers with beautiful interfaces.",
-            features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-            price: "Starting at $1,999",
-            color: "from-pink-500 to-rose-500",
-            deliveryTime: "2-4 weeks",
-            projects: "300+",
-        },
-        {
-            icon: Database,
-            title: "Backend Development",
-            description: "Scalable server-side solutions with robust APIs and database architecture.",
-            features: ["RESTful APIs", "Database Design", "Cloud Integration", "Performance Optimization"],
-            price: "Starting at $3,499",
-            color: "from-green-500 to-emerald-500",
-            deliveryTime: "3-6 weeks",
-            projects: "180+",
-        },
-        {
-            icon: Shield,
-            title: "Cybersecurity",
-            description: "Comprehensive security solutions to protect your digital assets and data.",
-            features: ["Security Audits", "Penetration Testing", "Compliance", "24/7 Monitoring"],
-            price: "Starting at $2,499",
-            color: "from-red-500 to-orange-500",
-            deliveryTime: "2-3 weeks",
-            projects: "100+",
-        },
-        {
-            icon: Cloud,
-            title: "Cloud Solutions",
-            description: "Cloud migration and infrastructure management for scalable applications.",
-            features: ["AWS/Azure/GCP", "DevOps", "Auto-scaling", "Cost Optimization"],
-            price: "Starting at $3,999",
-            color: "from-indigo-500 to-blue-500",
-            deliveryTime: "4-8 weeks",
-            projects: "120+",
-        },
-    ]
-
-    // const processSteps = [
-    //     {
-    //         step: "01",
-    //         title: "Discovery & Planning",
-    //         description: "We analyze your requirements and create a detailed project roadmap",
-    //         icon: Lightbulb,
-    //         duration: "1-2 weeks",
-    //     },
-    //     {
-    //         step: "02",
-    //         title: "Design & Prototyping",
-    //         description: "Creating wireframes, mockups, and interactive prototypes",
-    //         icon: Palette,
-    //         duration: "2-3 weeks",
-    //     },
-    //     {
-    //         step: "03",
-    //         title: "Development",
-    //         description: "Building your solution with cutting-edge technologies",
-    //         icon: Code,
-    //         duration: "4-12 weeks",
-    //     },
-    //     {
-    //         step: "04",
-    //         title: "Testing & QA",
-    //         description: "Rigorous testing to ensure quality and performance",
-    //         icon: CheckCircle,
-    //         duration: "1-2 weeks",
-    //     },
-    //     {
-    //         step: "05",
-    //         title: "Deployment",
-    //         description: "Launching your solution and ensuring smooth operation",
-    //         icon: Rocket,
-    //         duration: "1 week",
-    //     },
-    //     {
-    //         step: "06",
-    //         title: "Support & Maintenance",
-    //         description: "Ongoing support and continuous improvements",
-    //         icon: HeadphonesIcon,
-    //         duration: "Ongoing",
-    //     },
-    // ]
 
 
     const technologies = [
@@ -165,38 +23,6 @@ const Service = () => {
         { name: "TypeScript", icon: "📘", category: "Language" },
     ]
 
-    // const benefits = [
-    //     {
-    //         icon: Target,
-    //         title: "Results-Driven",
-    //         description: "We focus on delivering measurable business outcomes",
-    //     },
-    //     {
-    //         icon: Clock,
-    //         title: "On-Time Delivery",
-    //         description: "98% of our projects are delivered on or ahead of schedule",
-    //     },
-    //     {
-    //         icon: Award,
-    //         title: "Quality Assured",
-    //         description: "Rigorous testing and quality control processes",
-    //     },
-    //     {
-    //         icon: Users,
-    //         title: "Expert Team",
-    //         description: "Certified professionals with years of experience",
-    //     },
-    //     {
-    //         icon: TrendingUp,
-    //         title: "Scalable Solutions",
-    //         description: "Built to grow with your business needs",
-    //     },
-    //     {
-    //         icon: HeadphonesIcon,
-    //         title: "24/7 Support",
-    //         description: "Round-the-clock support and maintenance",
-    //     },
-    // ]
 
     return (
         <section
@@ -272,7 +98,7 @@ const Service = () => {
                       }
                     ]}
                   >
-                    {services.map((service, index) => (
+                    {services.map((service:any, index:any) => (
                       <div key={index} className="px-2">
                         <div
                           className="group relative bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl p-8 hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-500 transform hover:scale-105 cursor-pointer"
@@ -287,7 +113,7 @@ const Service = () => {
                           <div
                             className={`relative w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                           >
-                            <service.icon className="w-8 h-8 text-white" />
+                            <LazyIcon iconName={service.icon} className="w-8 h-8 text-white" />
                           </div>
 
                           {/* Content */}
@@ -297,7 +123,7 @@ const Service = () => {
 
                             {/* Features */}
                             <div className="space-y-2 mb-6">
-                              {service.features.map((feature, idx) => (
+                              {service.features.map((feature:any, idx:any) => (
                                 <div key={idx} className="flex items-center space-x-2">
                                   <CheckCircle className="w-4 h-4 text-green-500" />
                                   <span className="text-sm" style={{ color: "var(--text-color)" }}>{feature}</span>

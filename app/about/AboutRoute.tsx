@@ -265,7 +265,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                                     <div className="flex items-center justify-between mb-4">
                                         <div className="flex items-center space-x-3">
                                             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                                                <tech.icon className="w-5 h-5 text-white" />
+                                                <LazyIcon iconName={tech.icon} className="w-5 h-5 text-white" />
                                             </div>
                                             <span className="text-lg font-semibold" style={{ color: "var(--text-color)" }} >{tech.name}</span>
                                         </div>

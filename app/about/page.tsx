@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import AboutSection from '@/app/about/AboutRoute';
 
-const HeroApi = async () => {
+const AboutApi = async () => {
               
   const [res, res2, res3, res4] = await Promise.all([
     axios.get('https://malangcode.pythonanywhere.com/api/team-members'),
@@ -20,4 +20,4 @@ const HeroApi = async () => {
   return <AboutSection teamMembers={data} timeline={data2} technologies={data3} features={data4} />;
 };
 
-export default HeroApi;
+export default AboutApi;

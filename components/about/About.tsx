@@ -151,7 +151,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
             </div>
 
             {/* Right Content */}
-            <div className="relative">
+            <div className="relative shadow-md">
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
                 <h4 className="text-xl font-bold mb-4">Why Choose Us?</h4>
                 <ul className="space-y-3">
@@ -183,7 +183,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
             {features.map((value:any, index:any) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="text-center p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 style={{ backgroundColor: "var(--card-bg" }}>
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-white" />
@@ -246,8 +246,8 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
               {technologies.map((tech:any, index:any) => (
                 <div
                   key={index}
-                  className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="group p-6 backdrop-blur-sm rounded-2xl transition-all duration-300 shadow-md"
+                  style={{ animationDelay: `${index * 100}ms` , backgroundColor: "var(--card-bg)"}}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
@@ -321,7 +321,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
               >
                 {teamMembers.map((testimonial:any, i:any) => (
                   <div key={testimonial.name + i} className="px-5 py-10 testimonial-slide">
-                    <div className="testimonial-card group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--team-card-bg)", border:"1px solid var(--card-border)"}}>
+                    <div className="testimonial-card shadow-md group p-6 backdrop-blur-sm rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--card-bg)"}}>
                       {/* Image at the top, centered, rounded, even larger size */}
                       <div className="flex justify-center mb-5" >
                         <Image

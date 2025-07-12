@@ -241,7 +241,7 @@ const Service = ({ services }:any) => {
 
                                 {/* Features */}
                                 <div className="space-y-2 mb-6">
-                                    {service.features.map((feature, idx) => (
+                                    {service.features.map((feature:any, idx:any) => (
                                         <div key={idx} className="flex items-center space-x-2">
                                             <CheckCircle className="w-4 h-4 text-green-500" />
                                             <span className="text-sm" style={{ color: "var(--text-color)" }}>{feature}</span>

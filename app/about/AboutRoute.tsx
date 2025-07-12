@@ -6,60 +6,10 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
-import {
-    Users,
-    Target,
-    Award,
-    Zap,
-    Heart,
-    Code,
-    Globe,
-    Smartphone,
-    Database,
-    Brain,
-    Star,
-    CheckCircle,
-    Quote,
-    Calendar,
-    
-} from "lucide-react"
+import { Users, Heart, Star, CheckCircle, Quote, Calendar} from "lucide-react"
 
 
-const values = [
-    {
-        icon: Target,
-        title: "Innovation First",
-        description: "We embrace cutting-edge technologies to solve complex problems.",
-    },
-    {
-        icon: Users,
-        title: "Client Success",
-        description: "Your success is our success. We're committed to delivering exceptional results.",
-    },
-    {
-        icon: Award,
-        title: "Quality Assurance",
-        description: "Rigorous testing ensures reliable, secure, and performant solutions.",
-    },
-    {
-        icon: Zap,
-        title: "Agile Delivery",
-        description: "Fast, iterative development that adapts to your changing needs.",
-    },
-]
-
-
-const technologies = [
-    { name: "React", level: 95, icon: Code },
-    { name: "Node.js", level: 90, icon: Globe },
-    { name: "Mobile Dev", level: 85, icon: Smartphone },
-    { name: "Database", level: 88, icon: Database },
-    { name: "Cloud", level: 92, icon: Zap },
-    { name: "AI/ML", level: 80, icon: Brain },
-]
-
-
-const AboutSection = ({ teamMembers, timeline }:any) => {
+const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => {
     const [counters, setCounters] = useState({
         projects: 0,
         clients: 0,
@@ -243,9 +193,9 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                     <div
                         className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-1000 delay-800 translate-y-0 opacity-100`}
                     >
-                        {values.map((value) => (
+                        {features.map((value:any , index:any) => (
                             <div
-                                key={value.title}
+                                key={index}
                                 className="text-center p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                                 style={{ backgroundColor: "var(--card-bg" }}>
                                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -306,9 +256,9 @@ const AboutSection = ({ teamMembers, timeline }:any) => {
                         </div>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {technologies.map((tech, index) => (
+                            {technologies.map((tech:any, index:any) => (
                                 <div
-                                    key={tech.name}
+                                    key={index}
                                     className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300"
                                     style={{ animationDelay: `${index * 100}ms` }}
                                 >

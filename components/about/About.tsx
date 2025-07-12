@@ -6,137 +6,10 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import LazyIcon from "@/components/LazyIcon"
 import Image from "next/image"
-import {
-  Users,
-  Target,
-  Award,
-  Zap,
-  Heart,
-  Code,
-  Globe,
-  Smartphone,
-  Database,
-  Brain,
-  Star,
-  CheckCircle,
-  Quote,
-  Calendar,
-} from "lucide-react"
+import { Users, Heart, Star, CheckCircle, Quote, Calendar} from "lucide-react"
 
-const values = [
-  {
-    icon: Target,
-    title: "Innovation First",
-    description: "We embrace cutting-edge technologies to solve complex problems.",
-  },
-  {
-    icon: Users,
-    title: "Client Success",
-    description: "Your success is our success. We're committed to delivering exceptional results.",
-  },
-  {
-    icon: Award,
-    title: "Quality Assurance",
-    description: "Rigorous testing ensures reliable, secure, and performant solutions.",
-  },
-  {
-    icon: Zap,
-    title: "Agile Delivery",
-    description: "Fast, iterative development that adapts to your changing needs.",
-  },
-]
 
-// const timeline = [
-//   {
-//     year: "2019",
-//     title: "Company Founded",
-//     description: "Started with a vision to transform digital experiences",
-//     icon: Rocket,
-//   },
-//   {
-//     year: "2020",
-//     title: "First Major Client",
-//     description: "Delivered our first enterprise-level solution",
-//     icon: Award,
-//   },
-//   {
-//     year: "2021",
-//     title: "Team Expansion",
-//     description: "Grew to 15+ talented developers and designers",
-//     icon: Users,
-//   },
-//   {
-//     year: "2022",
-//     title: "100+ Projects",
-//     description: "Reached milestone of 100 successful project deliveries",
-//     icon: TrendingUp,
-//   },
-//   {
-//     year: "2023",
-//     title: "Global Recognition",
-//     description: "Received industry awards for innovation and excellence",
-//     icon: Star,
-//   },
-//   {
-//     year: "2024",
-//     title: "AI Integration",
-//     description: "Leading the way in AI-powered development solutions",
-//     icon: Brain,
-//   },
-// ]
-
-const technologies = [
-  { name: "React", level: 95, icon: Code },
-  { name: "Node.js", level: 90, icon: Globe },
-  { name: "Mobile Dev", level: 85, icon: Smartphone },
-  { name: "Database", level: 88, icon: Database },
-  { name: "Cloud", level: 92, icon: Zap },
-  { name: "AI/ML", level: 80, icon: Brain },
-]
-
-// const testimonials = [
-//   {
-//     name: "Bibek Adhikari ",
-//     role: "CEO, TechCorp",
-//     content:
-//       "Malang Coders transformed our digital presence completely. Their attention exceeded our expectations.",
-//     rating: 5,
-//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-//   },
-//   {
-//     name: "Rahish",
-//     role: "Founder, StartupXYZ",
-//     content: "Working with this team was a game-changer. They delivered our MVP ahead of schedule and within budget.",
-//     rating: 5,
-//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-//   },
-//   {
-//     name: "Om Pant",
-//     role: "CTO, InnovateLab",
-//     content:
-//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-//     rating: 5,
-//     image: "/image/pexels-photo-2379004.jpeg",
-//   },
-//   {
-//     name: "Sudhin",
-//     role: "CTO, InnovateLab",
-//     content:
-//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-//     rating: 5,
-//     image: "/image/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg",
-//   },
-//   {
-//     name: "Sangam Singh Dhami",
-//     role: "CTO, InnovateLab",
-//     content:
-//       "The quality of code and architecture they provided is exceptional. Highly recommend for any serious project.",
-//     rating: 5,
-//     image: "/image/pexels-photo-2379004.jpeg",
-//   },
-// ]
-
-const AboutSection = ({teamMembers, timeline}:any) => {
+const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
   const [counters, setCounters] = useState({
     projects: 0,
     clients: 0,
@@ -307,9 +180,9 @@ const AboutSection = ({teamMembers, timeline}:any) => {
           <div
             className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-1000 delay-800 translate-y-0 opacity-100`}
           >
-            {values.map((value) => (
+            {features.map((value:any, index:any) => (
               <div
-                key={value.title}
+                key={index}
                 className="text-center p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                 style={{ backgroundColor: "var(--card-bg" }}>
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -370,16 +243,16 @@ const AboutSection = ({teamMembers, timeline}:any) => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {technologies.map((tech, index) => (
+              {technologies.map((tech:any, index:any) => (
                 <div
-                  key={tech.name}
+                  key={index}
                   className="group p-6 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-2xl hover:bg-white/20 dark:hover:bg-gray-800/30 transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                        <tech.icon className="w-5 h-5 text-white" />
+                        <LazyIcon iconName={tech.icon} className="w-5 h-5 text-white" />
                       </div>
                       <span className="text-lg font-semibold" style={{ color: "var(--text-color)" }} >{tech.name}</span>
                     </div>

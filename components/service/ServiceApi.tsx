@@ -14,4 +14,4 @@ const ServiceApi = async () => {
   return <Service services = {data} />;
 };
 
-export default ServiceApi;
+export default ServiceApi; 

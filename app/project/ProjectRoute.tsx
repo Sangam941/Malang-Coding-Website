@@ -159,7 +159,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                         <div className="text-center text-gray-500">No projects found.</div>
                     )}
                 </div>
-
+ 
 
                 {/* Projects Grid */}
                 <div className="max-sm:hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">

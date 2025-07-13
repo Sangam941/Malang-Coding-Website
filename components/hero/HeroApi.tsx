@@ -3,7 +3,7 @@ import axios from 'axios'
 import HeroSection from '@/components/hero/Hero'
 
 const HeroApi = async () => {
-    const res = await axios.get('https://malangcode.pythonanywhere.com/api/stats');
+    const res = await axios.get(`${process.env.DOMAIN}/api/stats`);
     const data = res.data;
     
     return <HeroSection data = {data}/>

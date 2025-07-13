@@ -5,7 +5,7 @@ import Service from '@/app/service/ServiceRoute';
 const ServiceApi = async () => {
               
   const [res] = await Promise.all([
-    axios.get('https://malangcode.pythonanywhere.com/api/services')
+    axios.get(`${process.env.DOMAIN}/api/services`)
   ]);
 
   const data = res.data;

@@ -5,10 +5,10 @@ import AboutSection from '@/components/about/About';
 const AboutApi = async () => {
               
   const [res, res2, res3, res4] = await Promise.all([
-    axios.get('https://malangcode.pythonanywhere.com/api/team-members'),
-    axios.get('https://malangcode.pythonanywhere.com/api/time-line'),
-    axios.get('https://malangcode.pythonanywhere.com/api/technologies'),
-    axios.get('https://malangcode.pythonanywhere.com/api/about-features')
+    axios.get(`${process.env.DOMAIN}/api/team-members`),
+    axios.get(`${process.env.DOMAIN}/api/time-line`),
+    axios.get(`${process.env.DOMAIN}/api/technologies`),
+    axios.get(`${process.env.DOMAIN}/api/about-features`)
   ]);
 
   const data = res.data;

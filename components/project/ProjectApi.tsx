@@ -4,8 +4,8 @@ import ProjectsSection from "./Project";
 const ProjectApi = async () => {
     try {
         const [projectsRes, categoriesRes] = await Promise.all([
-            axios.get("https://malangcode.pythonanywhere.com/api/projects"),
-            axios.get("https://malangcode.pythonanywhere.com/api/project-categories"),
+            axios.get(`${process.env.DOMAIN}/api/projects`),
+            axios.get(`${process.env.DOMAIN}/api/project-categories`),
         ]);
 
         const data = projectsRes.data;

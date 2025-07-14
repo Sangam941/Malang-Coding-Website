@@ -17,35 +17,35 @@ const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null)
 
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await axios.post('https://malangcode.pythonanywhere.com/api/send-email/', {
-  name: formData.name,
-  email: formData.email,
-  subject: formData.subject,
-  message: formData.message,
-}, {
-  headers: {
-    "Content-Type": "application/json"
-  }
-});
+    try {
+      const response = await axios.post('https://malangcode.pythonanywhere.com/api/send-email/', {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
 
-    if (response.status === 200 || response.status === 201) {
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } else {
+      if (response.status === 200 || response.status === 201) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
       setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Submission error:", error);
-    setSubmitStatus("error");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
 
   const contactInfo = [
@@ -143,7 +143,7 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={(e)=>{
+              <form onSubmit={(e) => {
                 handleSubmit(e)
               }} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -157,7 +157,7 @@ const Contact = () => {
                         type="text"
                         name="name"
                         value={formData.name}
-                        onChange={(e)=> { setFormData({ ...formData, name: e.target.value })}}
+                        onChange={(e) => { setFormData({ ...formData, name: e.target.value }) }}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 "
                         placeholder="Enter your full name"
@@ -176,7 +176,7 @@ const Contact = () => {
                         type="email"
                         name="email"
                         value={formData.email}
-                        onChange={(e)=> setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                         placeholder="Enter your email address"
@@ -194,7 +194,7 @@ const Contact = () => {
                       type="text"
                       name="subject"
                       value={formData.subject}
-                      onChange={(e)=>{ setFormData({ ...formData, subject: e.target.value }) }}
+                      onChange={(e) => { setFormData({ ...formData, subject: e.target.value }) }}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                       placeholder="Enter your subject here"
                       style={{ color: "var(--text-color)", backgroundColor: "var(--input-color)" }}
@@ -207,7 +207,7 @@ const Contact = () => {
                   <textarea
                     name="message"
                     value={formData.message}
-                    onChange={ (e)=> setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none "

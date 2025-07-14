@@ -169,7 +169,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                         filteredProjects.map((project: any, index: any) => (
                             <div
                                 key={index}
-                                className={` dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 translate-y-0 opacity-100`}
+                                className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 translate-y-0 opacity-100`}
                                 style={{ backgroundColor: "var(--card-bg)" }}
                             >
                                 <div className="relative group">

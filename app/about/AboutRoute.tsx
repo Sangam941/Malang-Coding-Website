@@ -247,7 +247,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                                 draggable={true}
                             >
                                 {teamMembers.map((testimonial:any, i:any) => (
-                                    <div key={i} className="px-2 py-10 testimonial-slide">
+                                    <div key={i} className="px-2 sm:px-4 py-10 testimonial-slide">
                                         <div className="testimonial-card shadow-md group p-6 backdrop-blur-sm rounded-2xl transition-all duration-300 h-full flex flex-col justify-between" style={{ backgroundColor: "var(--card-bg)"}}>
                                             {/* Image at the top, centered, rounded, even larger size */}
                                             <div className="flex justify-center mb-5">
@@ -297,7 +297,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
             z-index: 1;
           }
           .testimonial-card:hover {
-            transform: scale(1.12);
+            transform: scale(1.06);
             z-index: 20;
             box-shadow: 0 8px 32px 0 rgba(59,130,246,0.18);
             border-color: #3b82f6;

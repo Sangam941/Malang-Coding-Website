@@ -77,7 +77,7 @@ const Service = ({ services }:any) => {
                 </div>
 
                 {/* Main Services Grid */}
-                <div className="mb-20">
+                <div className="mb-20 px-5">
                   <Slider
                     dots={true}
                     infinite={true}
@@ -99,7 +99,7 @@ const Service = ({ services }:any) => {
                     ]}
                   >
                     {services.map((service:any, index:any) => (
-                      <div key={index} className="py-6 px-2">
+                      <div key={index} className="py-6 px-2 sm:px-4">
                         <div
                           className="group relative shadow-md backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                           style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)" }}

@@ -219,7 +219,7 @@ const Service = ({ services }:any) => {
                     {services.map((service:any, index:any) => (
                         <div
                             key={service.title}
-                            className="group relative shadow-md backdrop-blur-sm px-2 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                            className="group relative shadow-md backdrop-blur-sm px-2 sm:px-4 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                             style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)"}}
                         >
                             {/* Gradient Background */}
@@ -444,10 +444,7 @@ const Service = ({ services }:any) => {
                                     </div>
 
                                     <button
-                                        className={`w-full font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 ${pkg.popular
-                                            ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                                            : "bg-white/10 dark:bg-gray-800/20 border border-gray-200/20 dark:border-gray-700/20 text-gray-900 dark:text-white hover:bg-white/20 dark:hover:bg-gray-800/30"
-                                            }`}
+                                        className={`w-full font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white`}
                                     >
                                         Get Started
                                     </button>

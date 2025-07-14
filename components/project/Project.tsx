@@ -68,7 +68,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
         </div>
 
         {/* Projects Carousel Slider for mobile view */}
-        <div className="mb-12">
+        <div className="mb-12 px-3">
           {filteredProjects && filteredProjects.length > 0 ? (
             <Slider
               dots={true}
@@ -99,7 +99,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
               ]}
             >
               {filteredProjects.slice(0,3).map((project: any, index: any) => (
-                <div key={index} className="py-6 px-2">
+                <div key={index} className="py-6 px-2 sm:px-4">
                   <div
                     className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-md transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
                     style={{ backgroundColor: "var(--card-bg)" }}

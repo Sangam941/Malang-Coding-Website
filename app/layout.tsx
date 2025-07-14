@@ -6,6 +6,7 @@ import LoadingPage from "@/components/Loading";
 import { Suspense } from "react";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import GotoTop from "@/components/GotoTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Navbar />
           <main className="sm:px-3 md:px-4 lg:px-6 xl:px-8">
             {children}
+            <GotoTop />
           </main>
           <Footer />
         </Suspense>

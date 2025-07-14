@@ -22,7 +22,7 @@ const Contact = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await axios.post(`${process.env.DOMAIN}/api/send-email/`, {
+    const response = await axios.post('https://malangcode.pythonanywhere.com/api/send-email/', {
   name: formData.name,
   email: formData.email,
   subject: formData.subject,

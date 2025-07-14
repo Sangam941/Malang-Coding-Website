@@ -27,7 +27,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
 
     return (
         <section ref={sectionRef} id="project" className="py-15 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-3">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <div

@@ -29,7 +29,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
   return (
     <section
       id="home"
-      className="relative px-5 py-4 sm:px-5 sm:py-6 md:px-7 lg:px-9 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{backgroundColor:"var(--bg-color)"}}>
+      className="relative px-3 py-4 sm:px-4 sm:py-6 md:px-6 lg:px-8 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{backgroundColor:"var(--bg-color)"}}>
       {/* Background Pattern */}
 
       <div className="container mx-auto">
@@ -77,14 +77,14 @@ const HeroSection = ({data}: HeroSectionProps) => {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105 shadow-lg shadow-blue-500/25">
+              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102 shadow-lg shadow-blue-500/25">
                 <span className="flex items-center justify-center space-x-2">
                   <span>Get Started</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </button>
 
-              <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-105">
+              <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102">
                 <Play className="w-5 h-5" />
                 <span>View Portfolio</span>
               </button>

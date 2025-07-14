@@ -78,7 +78,7 @@ const Contact = () => {
   return (
 
     <section ref={sectionRef} className="py-15 transition-colors duration-300">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-3">
         {/* Header */}
         <div className="text-center mb-16">
           <div

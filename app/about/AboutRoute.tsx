@@ -43,7 +43,7 @@ const AboutSection = ({ teamMembers, timeline, technologies, features }:any) => 
                     ))}
                 </div>
 
-                <div className="relative z-10 container mx-auto px-6 overflow-visible">
+                <div className="relative z-10 container mx-auto px-3 overflow-visible">
                     {/* Header */}
                     <div className="text-center mb-20">
                         <div

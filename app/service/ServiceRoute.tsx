@@ -185,7 +185,7 @@ const Service = ({ services }:any) => {
                 ))}
             </div>
 
-            <div className="relative z-10 container mx-auto px-6">
+            <div className="relative z-10 container mx-auto px-3">
                 {/* Header */}
                 <div className="text-center mb-20">
                     <div

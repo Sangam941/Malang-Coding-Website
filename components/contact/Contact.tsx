@@ -2,54 +2,51 @@
 
 import type React from "react"
 import { useState, useRef } from "react"
+import axios from "axios"
 import { Mail, Phone, MapPin, Send, CheckCircle, User, Building } from "lucide-react"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    subject: "",
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const sectionRef = useRef<HTMLElement>(null)
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) =>
-  //     { threshold: 0.1 },
-  //   )
 
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current)
-  //   }
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-  //   return () => observer.disconnect()
-  // }, [])
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  try {
+    const response = await axios.post(`${process.env.DOMAIN}/api/send-email/`, {
+  name: formData.name,
+  email: formData.email,
+  subject: formData.subject,
+  message: formData.message,
+}, {
+  headers: {
+    "Content-Type": "application/json"
   }
+});
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus("success")
-      setFormData({ name: "", email: "", company: "", message: "" })
-
-      setTimeout(() => {
-        setSubmitStatus("idle")
-      }, 5000)
-    }, 2000)
+    if (response.status === 200 || response.status === 201) {
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setSubmitStatus("error");
+    }
+  } catch (error) {
+    console.error("Submission error:", error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
   }
+};
+
 
   const contactInfo = [
     {
@@ -146,7 +143,9 @@ const Contact = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={(e)=>{
+                handleSubmit(e)
+              }} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2" style={{ color: "var(--text-color)" }}>
@@ -158,7 +157,7 @@ const Contact = () => {
                         type="text"
                         name="name"
                         value={formData.name}
-                        onChange={handleInputChange}
+                        onChange={(e)=> { setFormData({ ...formData, name: e.target.value })}}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 "
                         placeholder="Enter your full name"
@@ -177,7 +176,7 @@ const Contact = () => {
                         type="email"
                         name="email"
                         value={formData.email}
-                        onChange={handleInputChange}
+                        onChange={(e)=> setFormData({ ...formData, email: e.target.value })}
                         required
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                         placeholder="Enter your email address"
@@ -188,16 +187,16 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: "var(--text-color)" }}>Company</label>
+                  <label className="block text-sm font-medium mb-2" style={{ color: "var(--text-color)" }}>Subject</label>
                   <div className="relative">
                     <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                       type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
+                      name="subject"
+                      value={formData.subject}
+                      onChange={(e)=>{ setFormData({ ...formData, subject: e.target.value }) }}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                      placeholder="Your company name"
+                      placeholder="Enter your subject here"
                       style={{ color: "var(--text-color)", backgroundColor: "var(--input-color)" }}
                     />
                   </div>
@@ -208,7 +207,7 @@ const Contact = () => {
                   <textarea
                     name="message"
                     value={formData.message}
-                    onChange={handleInputChange}
+                    onChange={ (e)=> setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none "

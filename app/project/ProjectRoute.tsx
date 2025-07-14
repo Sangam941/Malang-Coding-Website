@@ -76,7 +76,6 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                             speed={500}
                             slidesToShow={3}
                             slidesToScroll={1}
-                            arrows={true}
                             autoplay={true}
                             autoplaySpeed={4000}
                             responsive={[
@@ -85,6 +84,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                                     settings: {
                                         slidesToShow: Math.min(3, filteredProjects.length),
                                         infinite: filteredProjects.length > 3,
+                                        arrows: true,
                                     }
                                 },
                                 {
@@ -92,6 +92,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                                     settings: {
                                         slidesToShow: 1,
                                         infinite: filteredProjects.length > 1,
+                                        arrows: false,
                                     }
                                 }
                             ]}

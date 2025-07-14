@@ -85,6 +85,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                   settings: {
                     slidesToShow: Math.min(3, filteredProjects.length),
                     infinite: filteredProjects.length > 3,
+                    arrows : true
                   }
                 },
                 {
@@ -92,6 +93,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                   settings: {
                     slidesToShow: 1,
                     infinite: filteredProjects.length > 1,
+                    arrows : false,
                   }
                 }
               ]}

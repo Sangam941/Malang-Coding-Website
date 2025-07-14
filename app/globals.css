@@ -57,6 +57,20 @@
   padding-right: 27px;
 } */
 
+/* Show arrows by default */
+.slick-prev, .slick-next {
+  display: block !important;
+}
+
+/* Hide arrows on small screens (width < 640px) */
+@media (max-width: 639px) {
+  .slick-prev, .slick-next {
+    display: none !important;
+  }
+}
+
+
+
 html {
   transition: background-color 0.4s ease, color 0.4s ease;
 }

@@ -219,7 +219,7 @@ const Service = ({ services }:any) => {
                     {services.map((service:any, index:any) => (
                         <div
                             key={service.title}
-                            className="group relative shadow-md backdrop-blur-sm px-2 sm:px-4 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                            className="group relative shadow-md backdrop-blur-sm sm:px-4 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                             style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)"}}
                         >
                             {/* Gradient Background */}
@@ -407,11 +407,11 @@ const Service = ({ services }:any) => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-10">
                         {packages.map((pkg:any, index:any) => (
                             <div
                                 key={index}
-                                className={`shadow-md relative group backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
+                                className={`w-[87vw] m-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
                                 style={{ animationDelay: `${index * 200}ms` , backgroundColor: "var(--team-card-bg)"}}
                             >

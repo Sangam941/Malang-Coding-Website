@@ -219,7 +219,7 @@ const Service = ({ services }:any) => {
                     {services.map((service:any, index:any) => (
                         <div
                             key={service.title}
-                            className="group relative shadow-md backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                            className="group relative shadow-md backdrop-blur-sm px-2 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
                             style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)"}}
                         >
                             {/* Gradient Background */}

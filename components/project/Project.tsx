@@ -99,7 +99,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
               ]}
             >
               {filteredProjects.slice(0,3).map((project: any, index: any) => (
-                <div key={index} className="p-6">
+                <div key={index} className="py-6 px-2">
                   <div
                     className={`dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-md transition-all duration-500 transform hover:scale-105 translate-y-0 opacity-100`}
                     style={{ backgroundColor: "var(--card-bg)" }}

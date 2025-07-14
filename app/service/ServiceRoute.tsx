@@ -224,12 +224,12 @@ const Service = ({ services }:any) => {
                         >
                             {/* Gradient Background */}
                             <div
-                                className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                                className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} style={{ background: service.color}}
                             ></div>
 
                             {/* Icon */}
                             <div
-                                className={`relative w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                                className={`relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`} style={{ background: service.color }}
                             >
                                 <LazyIcon iconName={service.icon} className="w-8 h-8 text-white" />
                             </div>

@@ -87,7 +87,7 @@ const Footer = () => {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="container mx-auto px-3 py-16">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-16 shadow">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-1">

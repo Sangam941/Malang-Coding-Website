@@ -1,6 +1,8 @@
 import axios from "axios";
 import ProjectsSection from "@/app/project/ProjectRoute";
 
+export const revalidate = 60;
+
 const ProjectApi = async () => {
     try {
         const [projectsRes, categoriesRes] = await Promise.all([

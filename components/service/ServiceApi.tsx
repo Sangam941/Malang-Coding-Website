@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Service from '@/components/service/Service';
 
+export const revalidate = 60;
+
 const ServiceApi = async () => {
               
   const [res] = await Promise.all([

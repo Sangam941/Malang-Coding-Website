@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Service from '@/app/service/ServiceRoute';
 
-export const revalidate = 10;
+export const revalidate = 60;
 
 const ServiceApi = async () => {
               

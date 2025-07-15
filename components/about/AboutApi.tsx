@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import AboutSection from '@/components/about/About';
 
+export const revalidate = 10;
 const AboutApi = async () => {
               
   const [res, res2, res3, res4] = await Promise.all([

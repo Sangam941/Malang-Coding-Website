@@ -76,7 +76,7 @@ const HeroSection = ({ data }: any) => {
                 }`}
             >
               <Link href="/service">
-                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102 shadow-lg shadow-blue-500/25">
+                <button className="cursor-pointer group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102 shadow-lg shadow-blue-500/25">
                   <span className="flex items-center justify-center space-x-2">
                     <span>Get Started</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +85,7 @@ const HeroSection = ({ data }: any) => {
               </Link>
 
               <Link href="/project">
-                <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102">
+                <button className="cursor-pointer group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102">
                   <Play className="w-5 h-5" />
                   <span>View Portfolio</span>
                 </button>

@@ -376,7 +376,7 @@ const Service = ({ services , packages}:any) => {
 
                                 {/* Gradient Background */}
                                 <div
-                                    className={`absolute inset-0 bg-gradient-to-r ${pkg.color} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`} style={{backgroundColor: pkg.color}}
                                 ></div>
 
                                 <div className="relative z-10">

@@ -6,7 +6,8 @@ const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import LazyIcon from "@/components/LazyIcon"
 import { Code, Palette, Cog, Users, ArrowRight, CheckCircle, Clock, Target, Lightbulb, Rocket, HeadphonesIcon, Play, Award, TrendingUp} from "lucide-react"
 
-const Service = ({ services }:any) => {
+const Service = ({ services , packages}:any) => {
+    console.log(packages)
     const [activeProcess, setActiveProcess] = useState(0)
     const [activeProcessMobile, setActiveProcessMobile] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)
@@ -56,57 +57,6 @@ const Service = ({ services }:any) => {
         },
     ]
 
-    const packages = [
-        {
-            name: "Starter",
-            price: "$2,999",
-            description: "Perfect for small businesses and startups",
-            features: [
-                "Custom Website/App",
-                "Responsive Design",
-                "Basic SEO",
-                "3 Months Support",
-                "Source Code",
-                "Documentation",
-            ],
-            popular: false,
-            color: "from-gray-500 to-gray-600",
-        },
-        {
-            name: "Professional",
-            price: "$7,999",
-            description: "Ideal for growing businesses",
-            features: [
-                "Everything in Starter",
-                "Advanced Features",
-                "Database Integration",
-                "API Development",
-                "6 Months Support",
-                "Performance Optimization",
-                "Security Implementation",
-                "Analytics Integration",
-            ],
-            popular: true,
-            color: "from-blue-500 to-purple-600",
-        },
-        {
-            name: "Enterprise",
-            price: "Custom",
-            description: "For large-scale applications",
-            features: [
-                "Everything in Professional",
-                "Custom Architecture",
-                "Scalable Infrastructure",
-                "Advanced Security",
-                "12 Months Support",
-                "Dedicated Team",
-                "Priority Support",
-                "Training & Consultation",
-            ],
-            popular: false,
-            color: "from-purple-500 to-pink-500",
-        },
-    ]
 
     const technologies = [
         { name: "React", icon: "⚛️", category: "Frontend" },
@@ -407,11 +357,11 @@ const Service = ({ services }:any) => {
                         </p>
                     </div>
 
-                    <div className="md:grid md:grid-cols-3 gap-10">
+                    <div className="grid md:grid-cols-3 gap-10">
                         {packages.map((pkg:any, index:any) => (
                             <div
                                 key={index}
-                                className={`max-sm:w-[87vw] shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
+                                className={`max-sm:w-[87vw] max-sm:mx-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
                                 style={{ animationDelay: `${index * 200}ms` , backgroundColor: "var(--team-card-bg)"}}
                             >

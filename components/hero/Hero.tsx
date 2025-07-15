@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { ArrowRight, Play } from "lucide-react"
-import Image from "next/image"    
+import Image from "next/image"
 import LazyIcon from "@/components/LazyIcon"
+import Link from "next/link";
 
-type HeroSectionProps = {
-  data: any; // Define the type of data if known
-}
 
-const HeroSection = ({data}: HeroSectionProps) => {
+const HeroSection = ({ data }: any) => {
 
   const [isVisible, setIsVisible] = useState(false)
 
@@ -29,7 +27,7 @@ const HeroSection = ({data}: HeroSectionProps) => {
   return (
     <section
       id="home"
-      className="relative px-3 py-4 sm:px-4 sm:py-6 md:px-6 lg:px-8 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{backgroundColor:"var(--bg-color)"}}>
+      className="relative px-3 py-4 sm:px-4 sm:py-6 md:px-6 lg:px-8 md:py-8 lg:py-10 flex items-center overflow-hidden" style={{ backgroundColor: "var(--bg-color)" }}>
       {/* Background Pattern */}
 
       <div className="container mx-auto">
@@ -37,9 +35,8 @@ const HeroSection = ({data}: HeroSectionProps) => {
           {/* Left Content */}
           <div className="space-y-8">
             <div
-              className={`inline-flex items-center space-x-2 bg-blue-100 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium transition-all duration-100 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`inline-flex items-center space-x-2 bg-blue-100 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium transition-all duration-100 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span>Available for New Projects</span>
@@ -48,27 +45,25 @@ const HeroSection = ({data}: HeroSectionProps) => {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1
-                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-200 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
+                className={`text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight transition-all duration-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                  }`}
 
-                style={{color:"var(--text-color)"}}
+                style={{ color: "var(--text-color)" }}
               >
                 MalangCode{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Innovators {" "}
                 </span>
                 <span className="text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Pvt. Ltd. 
+                  Pvt. Ltd.
                 </span>
 
               </h1>
 
               <p
-                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-500 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-                style={{color:"var(--text-color)"}}
+                className={`text-xl text-gray-600  leading-relaxed max-w-2xl transition-all duration-500 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                  }`}
+                style={{ color: "var(--text-color)" }}
               >
                 We are a professional IT company delivering cutting-edge software solutions, web applications, and
                 digital experiences that drive business success.
@@ -77,36 +72,38 @@ const HeroSection = ({data}: HeroSectionProps) => {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-500 delay-600 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-500 delay-600 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102 shadow-lg shadow-blue-500/25">
-                <span className="flex items-center justify-center space-x-2">
-                  <span>Get Started</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
+              <Link href="/service">
+                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102 shadow-lg shadow-blue-500/25">
+                  <span className="flex items-center justify-center space-x-2">
+                    <span>Get Started</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </Link>
 
-              <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102">
-                <Play className="w-5 h-5" />
-                <span>View Portfolio</span>
-              </button>
+              <Link href="/project">
+                <button className="group flex items-center justify-center space-x-2 bg-white border border-gray-300  hover:bg-gray-50  text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-500 transform hover:scale-102">
+                  <Play className="w-5 h-5" />
+                  <span>View Portfolio</span>
+                </button>
+              </Link>
             </div>
 
             {/* Stats */}
             <div
-              className={`grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 transition-all duration-500 delay-800 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
+              className={`grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 transition-all duration-500 delay-800 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
             >
-              {data.map((stat:any, index:any) => (
+              {data.map((stat: any, index: any) => (
                 <div key={index} className="text-center group">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
                     <LazyIcon iconName={stat.icon} className="w-6 h-6 text-white" />
                   </div>
-                  <div className="text-2xl font-bold"style={{color:"var(--text-color)"}}>{stat.number}</div>
-                  <div className="text-sm"style={{color:"var(--text-color)"}}>{stat.label}</div>
+                  <div className="text-2xl font-bold" style={{ color: "var(--text-color)" }}>{stat.number}</div>
+                  <div className="text-sm" style={{ color: "var(--text-color)" }}>{stat.label}</div>
                 </div>
               ))}
             </div>

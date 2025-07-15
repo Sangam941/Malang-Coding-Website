@@ -4,14 +4,18 @@ import Service from '@/app/service/ServiceRoute';
 
 const ServiceApi = async () => {
               
-  const [res] = await Promise.all([
-    axios.get(`${process.env.DOMAIN}/api/services`)
+  const [res, res2] = await Promise.all([
+    axios.get(`${process.env.DOMAIN}/api/services`),
+    axios.get(`${process.env.DOMAIN}/api/packages`)
+
   ]);
+  // console.log(res2.)
 
   const data = res.data;
+  const data2 = res2.data
 
 
-  return <Service services = {data} />;
+  return <Service services = {data} packages = {data2} />;
 };
 
 export default ServiceApi;

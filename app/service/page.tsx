@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Service from '@/app/service/ServiceRoute';
 
+export const revalidate = 10;
+
 const ServiceApi = async () => {
               
   const [res, res2] = await Promise.all([

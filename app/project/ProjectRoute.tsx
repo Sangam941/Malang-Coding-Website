@@ -209,7 +209,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                                     </div>
 
                                     <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
-                                    <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
+                                    <p className="text-sm mb-4 leading-relaxed line-clamp-2" style={{ color: "var(--text-color)" }}>{project.description}</p>
 
                                     <div className="flex flex-wrap gap-2">
                                         {project.technologies.map((tech: any) => (

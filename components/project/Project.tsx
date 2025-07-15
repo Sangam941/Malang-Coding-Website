@@ -26,7 +26,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
   }, [data, activeFilter]);
 
   return (
-    <section ref={sectionRef} id="project" className="py-15 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
+    <section ref={sectionRef} id="project" className="py-10 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
       <div className="container mx-auto px-3">
         {/* Header */}
         <div className="text-center mb-16">
@@ -141,12 +141,12 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                         </div>
                       </div>
                       <h3 className="text-lg font-bold mb-2" style={{ color: "var(--text-color)" }}>{project.title}</h3>
-                      <p className="text-sm mb-4 leading-relaxed" style={{ color: "var(--text-color)" }}>{project.description}</p>
+                      <p className="text-sm mb-4 leading-relaxed line-clamp-2" style={{ color: "var(--text-color)" }}>{project.description}</p>
                       <div className="flex flex-wrap gap-1">
                         {project.technologies.map((tech: any) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                            className="tech-scroll scroll-auto px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
                           >
                             {tech}
                           </span>
@@ -224,7 +224,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
                   ))}
                 </div> */}
         <div
-          className={`py-10 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
+          className={`py-5 text-center transition-all duration-1000 delay-1600 translate-y-0 opacity-100`}
         >
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-black/10"></div>

@@ -56,8 +56,12 @@ const HeroSection = ({data}: HeroSectionProps) => {
               >
                 MalangCode{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Innovators Pvt.Ltd
+                  Innovators {" "}
                 </span>
+                <span className="text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Pvt. Ltd. 
+                </span>
+
               </h1>
 
               <p

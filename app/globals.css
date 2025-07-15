@@ -26,7 +26,7 @@
   --gradient-to: rgba(147, 51, 234, 0.3);    /*purple-500/30*/
   --bg-color: #0f172a;
   --category-bg: #dbeafe; 
-  --category-text: #ffffff; /* gray-100 */
+  --category-text: #272727; /* gray-100 */
   --text-color: #f1f5f9;
   --text-muted: #94a3b8;
   --primary-color: #3b82f6;
@@ -67,6 +67,10 @@
   .slick-prev, .slick-next {
     display: none !important;
   }
+}
+
+.tech-scroll::-webkit-scrollbar{
+    display: none;
 }
 
 

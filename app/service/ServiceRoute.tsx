@@ -407,11 +407,11 @@ const Service = ({ services }:any) => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-10">
+                    <div className="md:grid md:grid-cols-3 gap-10">
                         {packages.map((pkg:any, index:any) => (
                             <div
                                 key={index}
-                                className={`w-[87vw] m-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
+                                className={`max-sm:w-[87vw] shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
                                 style={{ animationDelay: `${index * 200}ms` , backgroundColor: "var(--team-card-bg)"}}
                             >

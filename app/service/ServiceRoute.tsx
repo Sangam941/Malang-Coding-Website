@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
 const Slider = dynamic(() => import("react-slick"), { ssr: false })
 import LazyIcon from "@/components/LazyIcon"
-import { Code, Palette, Cog, Users, ArrowRight, CheckCircle, Clock, Target, Lightbulb, Rocket, HeadphonesIcon, Play, Award, TrendingUp} from "lucide-react"
+import { Code, Palette, Cog, Users, ArrowRight, CheckCircle, Clock, Target, Lightbulb, Rocket, HeadphonesIcon, Play, Award, TrendingUp } from "lucide-react"
 
-const Service = ({ services , packages}:any) => {
+const Service = ({ services, packages }: any) => {
     console.log(packages)
     const [activeProcess, setActiveProcess] = useState(0)
     const [activeProcessMobile, setActiveProcessMobile] = useState(0)
@@ -114,7 +114,7 @@ const Service = ({ services , packages}:any) => {
         <section
             ref={sectionRef}
             id="services"
-            className="relative py-10 overflow-hidden transition-colors duration-300"
+            className="relative py-5 overflow-hidden transition-colors duration-300"
             style={{ color: "var(--bg-color)" }}>
             {/* Background Elements */}
 
@@ -137,10 +137,10 @@ const Service = ({ services , packages}:any) => {
 
             <div className="relative z-10 container mx-auto px-3">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-10">
                     <div
-                        className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 dark:border-gray-700/20 rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
-                    >
+                        className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-3 transition-all duration-1000 translate-y-0 opacity-100`}
+                    style={{backgroundColor: "var(--card-bg)"}}>
                         <Cog className="w-4 h-4 text-blue-500 animate-spin" />
                         <span style={{ color: "var(--text-color)" }}>Our Services</span>
                     </div>
@@ -166,15 +166,15 @@ const Service = ({ services , packages}:any) => {
                 <div
                     className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-300 translate-y-0 opacity-100`}
                 >
-                    {services.map((service:any, index:any) => (
+                    {services.map((service: any, index: any) => (
                         <div
                             key={service.title}
-                            className="group relative shadow-md backdrop-blur-sm sm:px-4 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
-                            style={{ animationDelay: `${index * 150}ms` , backgroundColor: "var(--team-card-bg)"}}
+                            className="max-sm:w-[90vw] max-sm:m-auto group relative shadow-md backdrop-blur-sm sm:px-4 rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 cursor-pointer"
+                            style={{ animationDelay: `${index * 150}ms`, backgroundColor: "var(--team-card-bg)" }}
                         >
                             {/* Gradient Background */}
                             <div
-                                className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} style={{ background: service.color}}
+                                className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} style={{ background: service.color }}
                             ></div>
 
                             {/* Icon */}
@@ -191,7 +191,7 @@ const Service = ({ services , packages}:any) => {
 
                                 {/* Features */}
                                 <div className="space-y-2 mb-6">
-                                    {service.features.map((feature:any, idx:any) => (
+                                    {service.features.map((feature: any, idx: any) => (
                                         <div key={idx} className="flex items-center space-x-2">
                                             <CheckCircle className="w-4 h-4 text-green-500" />
                                             <span className="text-sm" style={{ color: "var(--text-color)" }}>{feature}</span>
@@ -243,7 +243,7 @@ const Service = ({ services , packages}:any) => {
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transform -translate-y-1/2"></div>
 
                         <div className="max-sm:hidden grid md:grid-cols-2 lg:grid-cols-6 gap-8">
-                            {processSteps.map((step:any, index:any) => (
+                            {processSteps.map((step: any, index: any) => (
                                 <div
                                     key={index}
                                     className={`relative group text-center transition-all duration-500 ${activeProcess === index ? "scale-110" : "scale-100"
@@ -282,9 +282,9 @@ const Service = ({ services , packages}:any) => {
                             ))}
                         </div>
 
-                        <div className="md:hidden p-5">
+                        <div className="md:hidden p-3">
                             <Slider
-                            
+
                                 dots={true}
                                 infinite={true}
                                 speed={500}
@@ -293,7 +293,7 @@ const Service = ({ services , packages}:any) => {
                                 arrows={true}
                                 autoplay={true}
                                 autoplaySpeed={3000}
-                                beforeChange={(_:any, next:any) => setActiveProcessMobile(next)}
+                                beforeChange={(_: any, next: any) => setActiveProcessMobile(next)}
                                 responsive={[
                                     {
                                         breakpoint: 1024,
@@ -308,7 +308,7 @@ const Service = ({ services , packages}:any) => {
                                 {processSteps.map((step, index) => (
                                     <div key={index}>
                                         <div
-                                            className={`relative group text-center transition-all duration-500 ${activeProcessMobile === index ? "scale-105" : "scale-100"}`}
+                                            className={`w-[80vw] m-auto relative group text-center transition-all duration-500 ${activeProcessMobile === index ? "scale-105" : "scale-100"}`}
                                             style={{ animationDelay: `${3000}ms` }}
                                         >
                                             {/* Step Circle */}
@@ -358,12 +358,12 @@ const Service = ({ services , packages}:any) => {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-10">
-                        {packages.map((pkg:any, index:any) => (
+                        {packages.map((pkg: any, index: any) => (
                             <div
                                 key={index}
                                 className={`max-sm:w-[87vw] max-sm:mx-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
-                                style={{ animationDelay: `${index * 200}ms` , backgroundColor: "var(--team-card-bg)"}}
+                                style={{ animationDelay: `${index * 200}ms`, backgroundColor: "var(--team-card-bg)" }}
                             >
                                 {/* Popular Badge */}
                                 {pkg.popular && (
@@ -376,21 +376,23 @@ const Service = ({ services , packages}:any) => {
 
                                 {/* Gradient Background */}
                                 <div
-                                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`} style={{backgroundColor: pkg.color}}
+                                    className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500`} style={{ backgroundColor: pkg.color }}
                                 ></div>
 
-                                <div className="relative z-10">
-                                    <h4 className="text-2xl font-bold mb-2" style={{ color: "var(--text-color)" }}>{pkg.name}</h4>
-                                    <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">{pkg.price}</div>
-                                    <p className="mb-6" style={{ color: "var(--text-color)" }}>{pkg.description}</p>
+                                <div className="sm:h-[80vh] flex flex-col justify-between">
+                                    <div className="relative z-10">
+                                        <h4 className="text-2xl font-bold mb-2" style={{ color: "var(--text-color)" }}>{pkg.name}</h4>
+                                        <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-4">{pkg.price}</div>
+                                        <p className="mb-6" style={{ color: "var(--text-color)" }}>{pkg.description}</p>
 
-                                    <div className="space-y-3 mb-8">
-                                        {pkg.features.map((feature:any, idx:any) => (
-                                            <div key={idx} className="flex items-center space-x-3">
-                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                                                <span style={{ color: "var(--text-color)" }}>{feature}</span>
-                                            </div>
-                                        ))}
+                                        <div className="space-y-3 mb-8">
+                                            {pkg.features.map((feature: any, idx: any) => (
+                                                <div key={idx} className="flex items-center space-x-3">
+                                                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                                    <span style={{ color: "var(--text-color)" }}>{feature}</span>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     <button
@@ -416,11 +418,11 @@ const Service = ({ services , packages}:any) => {
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-                        {technologies.map((tech:any, index:any) => (
+                        {technologies.map((tech: any, index: any) => (
                             <div
                                 key={index}
                                 className="shadow-md group text-center p-4 backdrop-blur-sm rounded-xl transition-all duration-300 transform hover:scale-105"
-                                style={{ animationDelay: `${index * 100}ms` , backgroundColor: "var(--team-card-bg)" }}
+                                style={{ animationDelay: `${index * 100}ms`, backgroundColor: "var(--team-card-bg)" }}
                             >
                                 <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{tech.icon}</div>
                                 <div className="text-sm font-semibold mb-1" style={{ color: "var(--text-color)" }}>{tech.name}</div>
@@ -442,7 +444,7 @@ const Service = ({ services , packages}:any) => {
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {benefits.map((benefit:any, index:any) => (
+                        {benefits.map((benefit: any, index: any) => (
                             <div
                                 key={index}
                                 className="shadow-md group text-center p-6 backdrop-blur-sm rounded-2xl transition-all duration-300 transform hover:scale-105"

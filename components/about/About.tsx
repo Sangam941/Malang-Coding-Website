@@ -270,6 +270,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
                           className="w-[120px] h-[120px] aspect-square rounded-full object-cover border-4 border-white shadow-lg"
                         />
                       </div>
+
                       <Quote className="w-8 h-8 text-blue-500 mb-4 mx-auto" />
                       <p className="mb-6 italic text-center" style={{ color: "var(--text-color)" }}>
                         &quot;{testimonial.bio}&quot;
@@ -331,3 +332,4 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
 }
 
 export default AboutSection
+

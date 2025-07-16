@@ -23,3 +23,4 @@ const AboutApi = async () => {
 };
 
 export default AboutApi;
+

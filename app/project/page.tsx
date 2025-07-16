@@ -21,5 +21,3 @@ const ProjectApi = async () => {
 };
 
 export default ProjectApi;
-
-

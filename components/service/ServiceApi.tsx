@@ -1,19 +1,23 @@
 import React from 'react';
-import axios from 'axios';
 import Service from '@/components/service/Service';
 
-export const revalidate = 60;
+export const revalidate = 60; // ISR: regenerate the page every 60 seconds
 
 const ServiceApi = async () => {
-              
-  const [res] = await Promise.all([
-    axios.get(`${process.env.DOMAIN}/api/services`)
-  ]);
+  try {
+    const res = await fetch(`${process.env.DOMAIN}/api/services`);
 
-  const data = res.data;
+    if (!res.ok) {
+      throw new Error('Failed to fetch services data');
+    }
 
+    const data = await res.json();
 
-  return <Service services = {data} />;
+    return <Service services={data} />;
+  } catch (error) {
+    console.error('Error loading services:', error);
+    return <div>Failed to load services.</div>;
+  }
 };
 
-export default ServiceApi; 
+export default ServiceApi;

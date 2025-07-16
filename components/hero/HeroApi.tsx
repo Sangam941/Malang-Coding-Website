@@ -1,14 +1,15 @@
-import React from 'react'
-import axios from 'axios'
-import HeroSection from '@/components/hero/Hero'
+import HeroSection from '@/components/hero/Hero';
 
-export const revalidate = 60;
+export const revalidate = 60; // ✅ Enables ISR (rebuild every 60 seconds)
 
-const HeroApi = async () => {
-    const res = await axios.get(`${process.env.DOMAIN}/api/stats`);
-    const data = res.data;
-    
-    return <HeroSection data = {data}/>
+export default async function HeroPage() {
+  const res = await fetch(`${process.env.DOMAIN}/api/stats`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  const data = await res.json();
+
+  return <HeroSection data={data} />;
 }
-
-export default HeroApi

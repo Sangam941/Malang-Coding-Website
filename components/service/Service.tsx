@@ -28,7 +28,7 @@ const Service = ({ services }:any) => {
         <section
             ref={sectionRef}
             id="services"
-            className="relative py-10 overflow-hidden transition-colors duration-300"
+            className="relative py-6 pb-12 overflow-hidden transition-colors duration-300"
            style={{ color: "var(--bg-color)" }}>
             {/* Background Elements */}
            
@@ -51,9 +51,9 @@ const Service = ({ services }:any) => {
 
             <div className="relative z-10 container mx-auto px-3">
                 {/* Header */}
-                <div className="text-center mb-10">
+                <div className="text-center mb-7">
                     <div
-                        className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
+                        className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-5 transition-all duration-1000 translate-y-0 opacity-100`}
                     style={{backgroundColor: "var(--card-bg)"}}>
                           <Cog className="w-4 h-4 text-blue-500 animate-spin" />
                         <span style={{color:"var(--text-color)"}}>Our Services</span>

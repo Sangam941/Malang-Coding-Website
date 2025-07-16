@@ -76,8 +76,8 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <div
-            className={`inline-flex items-center space-x-2 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/20 rounded-full px-4 py-2 text-sm mb-3 transition-all duration-1000 translate-y-0 opacity-100`}
-          >
+            className={`inline-flex shadow items-center space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-3 transition-all duration-1000 translate-y-0 opacity-100`}
+          style={{backgroundColor: "var(--card-bg)"}}>
             <Phone className="w-4 h-4 text-blue-500" />
             <span className="" style={{ color: "var(--text-color)" }}>Contact</span>
           </div>

@@ -139,7 +139,7 @@ const Service = ({ services, packages }: any) => {
                 {/* Header */}
                 <div className="text-center mb-10">
                     <div
-                        className={`inline-flex items-center space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-3 transition-all duration-1000 translate-y-0 opacity-100`}
+                        className={`inline-flex items-center shadow space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-3 transition-all duration-1000 translate-y-0 opacity-100`}
                     style={{backgroundColor: "var(--card-bg)"}}>
                         <Cog className="w-4 h-4 text-blue-500 animate-spin" />
                         <span style={{ color: "var(--text-color)" }}>Our Services</span>

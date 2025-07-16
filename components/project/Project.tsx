@@ -29,7 +29,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
     <section ref={sectionRef} id="project" className="py-10 transition-colors duration-300" style={{ backgroundColor: "var(--bg-color)" }}>
       <div className="container mx-auto px-3">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div
             className={`inline-flex items-center space-x-2 backdrop-blur-sm shadow rounded-full px-4 py-2 text-sm mb-6 transition-all duration-200 translate-y-0 opacity-100`}
           style={{backgroundColor: "var(--card-bg)"}}>
@@ -51,7 +51,7 @@ const ProjectsSection = ({ data, category }: ProjectProps) => {
 
         {/* Filter Buttons */}
         <div
-          className={`flex flex-wrap justify-center gap-4 mb-8 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
+          className={`flex flex-wrap justify-center gap-4 mb-6 transition-all duration-200 delay-400 translate-y-0 opacity-100`}
         >
           {category.slice().reverse().map((filter: any, index: any) => (
             <button

@@ -20,7 +20,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
       <section
         ref={sectionRef}
         id="about"
-        className="relative py-15 " style={{ backgroundColor: "var(--bg-color)" }}
+        className="relative py-7 " style={{ backgroundColor: "var(--bg-color)" }}
       >
         {/* Background Elements */}
         <div className="absolute inset-0">
@@ -46,7 +46,7 @@ const AboutSection = ({teamMembers, timeline, technologies, features}:any) => {
 
         <div className="relative z-10 container mx-auto px-3 sm:px-4 md:px-6 overflow-visible">
           {/* Header */}
-          <div className="text-center mb-20"> 
+          <div className="text-center mb-12"> 
             <div
               className={`inline-flex items-center shadow space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
             style={{backgroundColor: "var(--card-bg)"}}>

@@ -71,13 +71,19 @@ const Contact = () => {
 
   return (
 
-    <section ref={sectionRef} className="py-15 transition-colors duration-300">
+    <section ref={sectionRef} className="py-7 pb-20 transition-colors duration-300">
       <div className="container mx-auto px-3">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div
+<<<<<<< HEAD
             className={`inline-flex items-center shadow space-x-2 backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
           style={{backgroundColor: "var(--card-bg)"}}>
+=======
+            className={`inline-flex items-center space-x-2  backdrop-blur-sm rounded-full px-4 py-2 text-sm mb-6 transition-all duration-1000 translate-y-0 opacity-100`}
+            style={{ backgroundColor: "var(--card-bg)" }}
+          >
+>>>>>>> 44f699a505c8e94579eaf71e3f81a0805fe29304
             <Phone className="w-4 h-4 text-blue-500" />
             <span className="" style={{ color: "var(--text-color)" }}>Contact</span>
           </div>

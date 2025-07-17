@@ -132,12 +132,12 @@ const Service = ({ services }:any) => {
                             </div>
 
                             {/* CTA */}
-                            <button className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <Link href='/service' className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
                               <span className="flex items-center justify-center space-x-2">
                                 <span>Learn More</span>
                                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                               </span>
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

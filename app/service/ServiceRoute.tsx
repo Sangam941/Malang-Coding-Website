@@ -7,10 +7,13 @@ import LazyIcon from "@/components/LazyIcon"
 import { Code, Palette, Cog, Users, ArrowRight, CheckCircle, Clock, Target, Lightbulb, Rocket, HeadphonesIcon, Play, Award, TrendingUp } from "lucide-react"
 
 const Service = ({ services, packages }: any) => {
-    console.log(packages)
     const [activeProcess, setActiveProcess] = useState(0)
     const [activeProcessMobile, setActiveProcessMobile] = useState(0)
     const sectionRef = useRef<HTMLElement>(null)
+
+    const getstartedsoon = ()=>{
+        confirm("Get Started Soon...")
+    }
 
     const processSteps = [
         {
@@ -199,24 +202,8 @@ const Service = ({ services, packages }: any) => {
                                     ))}
                                 </div>
 
-                                {/* Stats */}
-                                <div className="grid grid-cols-3 gap-4 mb-6">
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold" style={{ color: "var(--text-color)" }}>{service.price}</div>
-                                        <div className="text-xs" style={{ color: "var(--text-color)" }}>Starting Price</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold" style={{ color: "var(--text-color)" }}>{service.deliveryTime}</div>
-                                        <div className="text-xs" style={{ color: "var(--text-color)" }}>Delivery</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="text-lg font-bold text-green-600 dark:text-green-400">{service.projects}</div>
-                                        <div className="text-xs" style={{ color: "var(--text-color)" }}>Projects</div>
-                                    </div>
-                                </div>
-
                                 {/* CTA */}
-                                <button className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
+                                <button onClick={getstartedsoon} className="group/btn w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105">
                                     <span className="flex items-center justify-center space-x-2">
                                         <span>Learn More</span>
                                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -361,7 +348,7 @@ const Service = ({ services, packages }: any) => {
                         {packages.map((pkg: any, index: any) => (
                             <div
                                 key={index}
-                                className={`max-sm:w-[87vw] max-sm:mx-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
+                                className={`cursor-pointer max-sm:w-[87vw] max-sm:mx-auto shadow-md relative group backdrop-blur-sm rounded-2xl px-4 py-6 transition-all duration-500 transform hover:scale-105 ${pkg.popular ? "ring-2 ring-blue-500 scale-105" : ""
                                     }`}
                                 style={{ animationDelay: `${index * 200}ms`, backgroundColor: "var(--team-card-bg)" }}
                             >
@@ -395,8 +382,8 @@ const Service = ({ services, packages }: any) => {
                                         </div>
                                     </div>
 
-                                    <button
-                                        className={`w-full font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white`}
+                                    <button onClick={getstartedsoon}
+                                        className={`z-20 w-full font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white`}
                                     >
                                         Get Started
                                     </button>

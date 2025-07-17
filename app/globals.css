@@ -41,23 +41,7 @@
   --input-color: #37405b;
 }
 
-/* 
-.project-slider .slick-prev,
-.project-slider .slick-next {
-  background-color: black;
-  color: #000000;
-  z-index: 10;
-}
 
-.project-slider .slick-prev {
-  padding-left: 8px;
-}
-
-.project-slider .slick-next {
-  padding-right: 27px;
-} */
-
-/* Show arrows by default */
 .slick-prev, .slick-next {
   display: block !important;
 }
@@ -68,6 +52,20 @@
     display: none !important;
   }
 }
+
+/* Default (light mode): black arrows */
+[data-theme="light"] .slick-prev:before,
+[data-theme="light"] .slick-next:before {
+  color: black !important;
+}
+
+/* Dark mode: white arrows */
+[data-theme="dark"] .slick-prev:before,
+[data-theme="dark"] .slick-next:before {
+  color: white !important;
+}
+
+
 
 .tech-scroll::-webkit-scrollbar{
     display: none;
